@@ -1,4 +1,5 @@
-import logo_desk from "./images/logo/Logo-laptop.png";
-import logo_mob from "./images/logo/Logo-phone.png";
+import logoDesk from "./images/logo/Logo-laptop.png";
+import logoMob from "./images/logo/Logo-phone.png";
+import searchIcon from "./images/icons/search-normal.svg";
 
-export { logo_desk, logo_mob };
+export { logoDesk, logoMob, searchIcon };
