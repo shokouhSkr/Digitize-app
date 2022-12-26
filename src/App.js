@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Navbar, Footer } from "./components";
+import { Header, Footer } from "./components";
 import { Home, Category, Cart, Favorites, SingleProduct, Error } from "./pages";
 
 const App = () => {
   return (
     <Router className="max-w-screen-xl font-iranyekan">
-      <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products/:id" element={<SingleProduct />} />
@@ -18,7 +18,6 @@ const App = () => {
       </Routes>
       <Footer />
     </Router>
-    // <div className="mx-12 bg-pink-300"> گوشی آیفون 13 پرومکس</div>
   );
 };
 
