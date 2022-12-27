@@ -34,6 +34,25 @@ export const links = [
   },
 ];
 
+export const sortOptions = [
+  {
+    id: 4545439,
+    title: "گران‌ترین‌محصول",
+  },
+  {
+    id: 12323111,
+    title: "ارزان‌ترین‌محصول",
+  },
+  {
+    id: 5553990,
+    title: "پربازدیدترین محصول",
+  },
+  {
+    id: 10909090,
+    title: "محبوب‌ترین‌محصول",
+  },
+];
+
 // in helpers file
 export const getUniqueValues = (data, type) => {
   let unique = data.map((item) => item[type]);

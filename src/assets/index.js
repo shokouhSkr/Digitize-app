@@ -12,6 +12,7 @@ import backBtn from "./images/icons/arrow-up.svg";
 import sortPhone from "./images/icons/sort-phone.svg";
 import arrow from "./images/icons/arrow-down.svg";
 import filterIcon from "./images/icons/filter.svg";
+import sortIcon from "./images/icons/Sort.svg";
 
 export {
   logoDesk,
@@ -28,4 +29,5 @@ export {
   sortPhone,
   arrow,
   filterIcon,
+  sortIcon,
 };
