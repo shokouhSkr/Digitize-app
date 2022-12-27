@@ -1,7 +1,12 @@
 import React from "react";
+import PageHero from "../components/PageHero";
 
 const Cart = () => {
-  return <div>Cart</div>;
+  return (
+    <main>
+      <PageHero title="سبدخرید" back />
+    </main>
+  );
 };
 
 export default Cart;

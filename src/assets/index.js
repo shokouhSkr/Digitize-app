@@ -8,6 +8,7 @@ import CategoryIcon from "./images/icons/CategoryIcon";
 import map from "./images/map.jpg";
 import line from "./images/icons/Line 8.svg";
 import phone from "./images/icons/call.svg";
+import backBtn from "./images/icons/arrow-up.svg";
 
 export {
   logoDesk,
@@ -20,4 +21,5 @@ export {
   map,
   line,
   phone,
+  backBtn,
 };

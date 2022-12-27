@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
+import PageHero from "../components/PageHero";
 
 const Favorites = () => {
-  return <div>Favorites</div>;
+  return (
+    <main>
+      <PageHero title="علاقه‌مندی" />
+    </main>
+  );
 };
 
 export default Favorites;
