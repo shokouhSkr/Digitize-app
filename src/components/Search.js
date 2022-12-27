@@ -5,7 +5,7 @@ const Search = () => {
   return (
     <>
       {/* mobile */}
-      <div className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-white shadow-md md:hidden">
+      <div className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-[#fdfdfd] shadow-md md:hidden">
         <img src={searchIcon} alt="search" />
       </div>
 

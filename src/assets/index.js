@@ -9,6 +9,9 @@ import map from "./images/map.jpg";
 import line from "./images/icons/Line 8.svg";
 import phone from "./images/icons/call.svg";
 import backBtn from "./images/icons/arrow-up.svg";
+import sortPhone from "./images/icons/sort-phone.svg";
+import arrow from "./images/icons/arrow-down.svg";
+import filterIcon from "./images/icons/filter.svg";
 
 export {
   logoDesk,
@@ -22,4 +25,7 @@ export {
   line,
   phone,
   backBtn,
+  sortPhone,
+  arrow,
+  filterIcon,
 };

@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer className="fixed bottom-0 left-0 right-0 md:static">
       {/* mobile */}
-      <section className="flex w-full items-center justify-between rounded-tr-lg rounded-tl-lg bg-white px-[10%] py-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:hidden">
+      <section className="flex w-full items-center justify-between rounded-tr-lg rounded-tl-lg bg-[#fdfdfd] px-[10%] py-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:hidden">
         {links.map((link) => {
           const { id, url, title, icon } = link;
           return (
@@ -38,7 +38,7 @@ const Footer = () => {
       </section>
 
       {/* laptop */}
-      <section className="mt-28 hidden grid-cols-4 grid-rows-1 bg-white px-[3%] py-6 text-slate-800 md:grid">
+      <section className="hidden grid-cols-4 grid-rows-1 bg-[#fdfdfd] px-[3%] py-6 text-slate-800 md:grid">
         {/* right */}
         <div className="col-span-2 flex flex-col p-2">
           <div className="mb-6 flex gap-1">
