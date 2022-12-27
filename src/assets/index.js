@@ -5,5 +5,19 @@ import MainIcon from "./images/icons/MainIcon";
 import FavIcon from "./images/icons/FavIcon";
 import CartIcon from "./images/icons/CartIcon";
 import CategoryIcon from "./images/icons/CategoryIcon";
+import map from "./images/map.jpg";
+import line from "./images/icons/Line 8.svg";
+import phone from "./images/icons/call.svg";
 
-export { logoDesk, logoMob, searchIcon, MainIcon, FavIcon, CartIcon, CategoryIcon };
+export {
+  logoDesk,
+  logoMob,
+  searchIcon,
+  MainIcon,
+  FavIcon,
+  CartIcon,
+  CategoryIcon,
+  map,
+  line,
+  phone,
+};
