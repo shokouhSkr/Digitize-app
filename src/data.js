@@ -1,7 +1,4 @@
-import home from "./assets/images/icons/home.svg";
-import category from "./assets/images/icons/category.svg";
-import bag from "./assets/images/icons/bag.svg";
-import fav from "./assets/images/icons/lovely.svg";
+import { FavIcon, CartIcon, MainIcon, CategoryIcon } from "./assets";
 import phoneCat from "./assets/images/icons/phone-category-icon.svg";
 import laptopCat from "./assets/images/icons/laptop-category-icon.svg";
 import watchCat from "./assets/images/icons/watch-category-icon.svg";
@@ -15,25 +12,25 @@ export const links = [
     id: 1,
     url: "/",
     title: "خانه",
-    icon: `${home}`,
+    icon: <MainIcon fill="#888" />,
   },
   {
     id: 2,
     url: "/category",
     title: "دسته‌‌بندی",
-    icon: `${category}`,
+    icon: <CategoryIcon fill="#888" />,
   },
   {
     id: 3,
     url: "/cart",
     title: "سبد‌خرید",
-    icon: `${bag}`,
+    icon: <CartIcon fill="#888" />,
   },
   {
     id: 4,
     url: "/favorites",
     title: "علاقه‌مندی",
-    icon: `${fav}`,
+    icon: <FavIcon fill="#888" />,
   },
 ];
 
