@@ -1,10 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { Filters } from "../components";
+import { categories } from "../data";
 
 const Sidebar = () => {
+  const [active, setActive] = useState(categories[0]);
+
+  const linkHandler = (id) => {
+    const selectedLink = categories.find((link) => link.id === id);
+    setActive(selectedLink);
+    // filterProducts()
+  };
+
   return (
-    <aside className="col-span-3 row-span-2 hidden bg-yellow-300 md:block 3xl:col-span-2">
-      <div className="sticky top-[108px] max-h-[calc(100vh_-_140px)] overflow-auto rounded-md bg-red-300 p-5 pb-8">
-        sidebar
+    <aside className="col-span-3 row-span-2 hidden md:block 3xl:col-span-2">
+      <div className="sticky top-[108px] max-h-[calc(100vh_-_140px)] overflow-auto rounded-md bg-[#fdfdfd] p-5 pb-8">
+        {/* category */}
+        <div className="mb-5">
+          <span className="mb-5 block font-semibold text-[#ff755d] lg:text-lg">دسته‌‌بندی</span>
+
+          <div className="mb-1 text-xs lg:text-sm">
+            {categories.map((category) => {
+              const { id, title, icon } = category;
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => linkHandler(id)}
+                  className={`${
+                    active.id === id ? "text-slate-800" : "text-gray-400"
+                  } mb-4 flex items-end`}
+                >
+                  <img src={icon} alt={title} className="ml-2" />
+                  <span>{title}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* divider */}
+        <hr class="mb-3 bg-gray-50 opacity-25" />
+
+        <Filters />
       </div>
     </aside>
   );

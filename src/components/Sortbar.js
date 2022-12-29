@@ -9,6 +9,7 @@ const Sortbar = () => {
   const linkHandler = (id) => {
     const selectedLink = sortOptions.find((link) => link.id === id);
     setActive(selectedLink);
+    // sortProducts()
   };
 
   return (
