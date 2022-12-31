@@ -14,12 +14,13 @@ const Products = () => {
 
         return (
           <div className="rounded-lg bg-white p-1.5 text-sm shadow-md">
+            {/* image */}
             <div className="relative mb-4 flex items-center justify-center rounded-lg bg-[#e2e2e2]">
               <button
-                className="absolute top-2 right-1 rounded-full bg-[#afafaf] p-1 px-1.5"
+                className="absolute top-2 right-1 rounded-full bg-[#afafaf] p-1.5 px-2"
                 onClick
               >
-                <FiHeart className="w-2.5 fill-[#ff755c] stroke-[#ff755c]" />
+                <FiHeart className="w-3 fill-[#ff755c] stroke-[#ff755c]" />
               </button>
               <div className="my-2 w-40">
                 <img src={image} alt={title} />
@@ -27,20 +28,29 @@ const Products = () => {
             </div>
 
             <div className="px-2">
+              {/* colors */}
               <div className="mb-2 flex justify-between">
                 <span className="text-xs font-light text-gray-200">{company}</span>
                 <ProductColors colors={colors} width="w-4" height="h-4" />
               </div>
 
+              {/* title */}
               <div className="mb-1 border-b border-gray-100 pb-2">
-                <p className="mb-2 flex items-center justify-start text-[11px] text-slate-800 xs:text-[13px] lg:text-sm">
+                <p
+                  className="mb-2 flex items-center justify-start text-[11px] text-slate-800 xs:text-[13px]
+                 2xl:text-sm"
+                >
                   {title}
                 </p>
-                <p className="flex items-center justify-end text-[11px] text-red-600 xs:text-[13px]">
+                <p
+                  className="flex items-center justify-end text-[11px] text-red-600 xs:text-[13px]
+                 2xl:text-sm"
+                >
                   {price} تومان
                 </p>
               </div>
 
+              {/* order */}
               <button type="button" className="mx-auto flex items-center justify-center py-2">
                 <Link
                   to={`products/${id}`}
