@@ -308,25 +308,6 @@ export const productsCategories = [
   },
 ];
 
-export const sortItems = [
-  {
-    id: 54005885456,
-    title: "گران‌ترین",
-  },
-  {
-    id: 540056768956,
-    title: "ارزان‌ترین",
-  },
-  {
-    id: 5400342256,
-    title: "محبوب‌ترین",
-  },
-  {
-    id: 54001111156,
-    title: "پربازدیدترین",
-  },
-];
-
 export const products = [
   {
     id: "iuhgdSDEWQPolop98",

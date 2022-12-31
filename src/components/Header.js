@@ -1,9 +1,8 @@
 import React from "react";
 
-import { categories } from "../data";
 import { Link } from "react-router-dom";
+import { categories } from "../data";
 import { Search } from "../components";
-import { products } from "../data";
 import { logoDesk } from "../assets";
 
 const Header = () => {
@@ -14,7 +13,7 @@ const Header = () => {
         <ul className="flex items-center justify-between gap-4 lg:gap-6 lg:text-base xl:gap-7 xl:text-lg">
           <img src={logoDesk} alt="Digitize" className="w-20" />
 
-          <Link to="/home">خانه</Link>
+          <Link to="/">خانه</Link>
           {categories.map((category) => {
             const { id, title } = category;
             return <button key={id}>{title}</button>;

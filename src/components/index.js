@@ -10,6 +10,7 @@ import Filters from "./Filters";
 import FilterButtons from "./FilterButtons";
 import Checkbox from "./Checkbox";
 import PriceRange from "./PriceRange";
+import ProductColors from "./ProductColors";
 
 export {
   Header,
@@ -24,4 +25,5 @@ export {
   FilterButtons,
   Checkbox,
   PriceRange,
+  ProductColors,
 };

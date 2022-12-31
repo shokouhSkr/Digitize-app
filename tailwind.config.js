@@ -23,7 +23,7 @@ module.exports = {
         md: "768px",
         lg: "900px",
         xl: "1024px",
-        "2xl": "1250px",
+        "2xl": "1280px",
         "3xl": "1440px",
       },
       // keyframes: {
