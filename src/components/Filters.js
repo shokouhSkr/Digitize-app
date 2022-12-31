@@ -22,7 +22,7 @@ const Filters = () => {
 
       {/* companies */}
       <div
-        className={`mb-5 flex cursor-pointer items-end justify-between text-xs text-slate-800 lg:text-sm`}
+        className={`mb-5 flex cursor-pointer items-end justify-between text-xs text-slate-800 xs:text-sm md:text-xs lg:text-sm`}
         onClick={() => setActive({ ...active, filterCompanies: !active.filterCompanies })}
       >
         <div className="mr-1.5 flex items-end gap-2">
@@ -45,7 +45,7 @@ const Filters = () => {
 
       {/* colors */}
       <div
-        className={`mb-5 flex cursor-pointer items-end justify-between text-xs text-slate-800 lg:text-sm`}
+        className={`mb-5 flex cursor-pointer items-end justify-between text-xs text-slate-800 xs:text-sm md:text-xs lg:text-sm`}
         onClick={() => setActive({ ...active, filterColors: !active.filterColors })}
       >
         <div className="mr-1.5 flex items-end gap-2">
@@ -68,12 +68,12 @@ const Filters = () => {
 
       {/* price */}
       <div
-        className={`mb-5 flex cursor-pointer items-end justify-between text-xs text-slate-800 lg:text-sm`}
+        className={`mb-5 flex cursor-pointer items-end justify-between text-xs text-slate-800 xs:text-sm md:text-xs lg:text-sm`}
         onClick={() => setActive({ ...active, filterPrice: !active.filterPrice })}
       >
         <div className="mr-1.5 flex items-end gap-2">
           {filterPriceIcon}
-          <span>محدوده‌قیمت</span>
+          <span>محدوده‌ قیمت</span>
         </div>
 
         <FiChevronDown

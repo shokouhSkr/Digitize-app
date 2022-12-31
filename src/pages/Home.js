@@ -26,7 +26,7 @@ const Home = () => {
         {isFilterModalOpen && (
           <Modal onClose={closeFilterModal}>
             <Filters />
-            <div className="mt-6 flex gap-4 md:hidden">
+            <div className="mt-12 flex gap-4 md:hidden">
               <button
                 type="button"
                 onClick={filterHandler}

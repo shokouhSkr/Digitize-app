@@ -207,25 +207,25 @@ export const links = [
     id: 1,
     url: "/",
     title: "خانه",
-    icon: <MainIcon fill="#888" />,
+    icon: <MainIcon fill="#666" />,
   },
   {
     id: 2,
     url: "/category",
     title: "دسته‌‌بندی",
-    icon: <CategoryIcon fill="#888" />,
+    icon: <CategoryIcon fill="#666" />,
   },
   {
     id: 3,
     url: "/cart",
     title: "سبد‌خرید",
-    icon: <CartIcon fill="#888" />,
+    icon: <CartIcon fill="#666" />,
   },
   {
     id: 4,
     url: "/favorites",
     title: "علاقه‌مندی",
-    icon: <FavIcon fill="#888" />,
+    icon: <FavIcon fill="#666" />,
   },
 ];
 

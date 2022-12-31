@@ -11,7 +11,7 @@ const PageHero = ({ title, back }) => {
         {back && (
           <Link
             to="/"
-            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-white shadow-md md:hidden"
+            className="mt-2.5 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md bg-white shadow-md md:hidden"
           >
             <img src={backBtn} alt="back" />
           </Link>

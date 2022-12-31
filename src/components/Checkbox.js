@@ -26,9 +26,9 @@ const Checkbox = ({ title, colors }) => {
   };
 
   return (
-    <div className="my-5 mr-1.5 flex items-center text-xs text-slate-800 lg:text-sm">
-      <input type="checkbox" id={title} value={title} name={title} className="accent-[#ff755d]" />
-      <label htmlFor={title} className="mr-2 cursor-pointer pl-40">
+    <div className="my-5 mr-1.5 flex items-center text-xs lg:text-sm">
+      <input type="checkbox" id={title} value={title} name={title} />
+      <label htmlFor={title} className="mr-2 w-full cursor-pointer pl-40 text-slate-800">
         {colors && getColors(title)}
         {!colors && title}
       </label>
