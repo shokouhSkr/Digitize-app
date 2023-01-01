@@ -26,7 +26,7 @@ const Checkbox = ({ title, colors }) => {
   };
 
   return (
-    <div className="my-5 mr-1.5 flex items-center text-xs lg:text-sm">
+    <div className="my-5 mr-1.5 flex items-center text-sm">
       <input
         type="checkbox"
         id={title}

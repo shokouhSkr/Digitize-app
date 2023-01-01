@@ -8,7 +8,7 @@ import { FiHeart } from "react-icons/fi";
 const Products = () => {
   // products => filtered products
   return (
-    <section className="col-span-12 mb-24 grid grid-cols-2 gap-x-4 gap-y-8 px-[5%] md:col-span-9 md:grid-cols-3 md:px-0 2xl:grid-cols-5 3xl:col-span-10">
+    <section className="col-span-12 mb-24 grid grid-cols-2 gap-x-4 gap-y-8 px-[5%] md:col-span-9 md:grid-cols-3 md:px-0 2xl:grid-cols-4 3xl:col-span-10">
       {products.map((product) => {
         const { image, company, id, price, title, colors } = product;
 
