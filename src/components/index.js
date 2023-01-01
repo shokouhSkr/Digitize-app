@@ -11,6 +11,7 @@ import FilterButtons from "./FilterButtons";
 import Checkbox from "./Checkbox";
 import PriceRange from "./PriceRange";
 import ProductColors from "./ProductColors";
+import SortModal from "./SortModal";
 
 export {
   Header,
@@ -26,4 +27,5 @@ export {
   Checkbox,
   PriceRange,
   ProductColors,
+  SortModal,
 };
