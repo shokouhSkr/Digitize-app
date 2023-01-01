@@ -21,7 +21,7 @@ const Search = () => {
           // value={text}
           onChange
           placeholder="جستجوی نام محصول، نام برند، و..."
-          className="w-full rounded-[4px] bg-stone-100 pl-2 text-sm font-normal focus:outline-none"
+          className="w-full rounded-[4px] border-none bg-stone-100 pl-2 text-sm font-normal focus:outline-none focus:ring-0"
         />
       </form>
     </>

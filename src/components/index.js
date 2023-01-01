@@ -12,6 +12,7 @@ import Checkbox from "./Checkbox";
 import PriceRange from "./PriceRange";
 import ProductColors from "./ProductColors";
 import SortModal from "./SortModal";
+import BreadCrumbs from "./BreadCrumbs";
 
 export {
   Header,
@@ -28,4 +29,5 @@ export {
   PriceRange,
   ProductColors,
   SortModal,
+  BreadCrumbs,
 };
