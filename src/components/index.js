@@ -13,6 +13,10 @@ import PriceRange from "./PriceRange";
 import ProductColors from "./ProductColors";
 import SortModal from "./SortModal";
 import BreadCrumbs from "./BreadCrumbs";
+import ProductImages from "./ProductImages";
+import ProductShipping from "./ProductShipping";
+import ProductFeatures from "./ProductFeatures";
+import AddToCart from "./AddToCart";
 
 export {
   Header,
@@ -30,4 +34,8 @@ export {
   ProductColors,
   SortModal,
   BreadCrumbs,
+  ProductImages,
+  ProductShipping,
+  ProductFeatures,
+  AddToCart,
 };

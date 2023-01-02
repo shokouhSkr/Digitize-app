@@ -14,7 +14,7 @@ const Sidebar = () => {
 
   return (
     <aside className="col-span-3 row-span-2 hidden md:block 3xl:col-span-2">
-      <div className="sticky top-[108px] mb-5 max-h-[calc(100vh_-_140px)] overflow-auto rounded-md bg-[#fdfdfd] p-5 pb-8">
+      <div className="sticky top-[108px] max-h-[calc(100vh_-_140px)] overflow-auto rounded-md bg-[#fdfdfd] p-5 pb-8">
         {/* category */}
         <div className="mb-5">
           <span className="mb-5 block font-semibold text-[#ff755d] lg:text-lg">دسته‌‌بندی</span>

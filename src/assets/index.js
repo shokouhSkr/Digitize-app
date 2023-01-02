@@ -14,6 +14,7 @@ import arrow from "./images/icons/arrow-down.svg";
 import filterIcon from "./images/icons/filter.svg";
 import sortIcon from "./images/icons/Sort.svg";
 import leftArrow from "./images/icons/Arrow---Left-2.svg";
+import preProductImg from "./images/products/previewimage8.png";
 
 export {
   logoDesk,
@@ -32,4 +33,5 @@ export {
   filterIcon,
   sortIcon,
   leftArrow,
+  preProductImg,
 };
