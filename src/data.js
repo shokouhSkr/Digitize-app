@@ -1,8 +1,7 @@
-import { FavIcon, CartIcon, MainIcon, CategoryIcon } from "./assets";
-
 import phoneCat from "./assets/images/icons/phone-category-icon.svg";
 import laptopCat from "./assets/images/icons/laptop-category-icon.svg";
 import watchCat from "./assets/images/icons/watch-category-icon.svg";
+import { homeIcon, bagIcon, faveIcon, cateIcon } from "./assets";
 
 // SVGs
 export const sellerIcon = (
@@ -203,25 +202,25 @@ export const links = [
     id: 1,
     url: "/",
     title: "خانه",
-    icon: <MainIcon fill="#999" />,
+    icon: `${homeIcon}`,
   },
   {
     id: 2,
     url: "/category",
     title: "دسته‌‌بندی",
-    icon: <CategoryIcon fill="#999" />,
+    icon: `${cateIcon}`,
   },
   {
     id: 3,
     url: "/cart",
     title: "سبد‌خرید",
-    icon: <CartIcon fill="#999" />,
+    icon: `${bagIcon}`,
   },
   {
     id: 4,
     url: "/favorites",
     title: "علاقه‌مندی",
-    icon: <FavIcon fill="#999" />,
+    icon: `${faveIcon}`,
   },
 ];
 
@@ -305,7 +304,6 @@ export const products = [
   {
     id: "iuhgdSDEWQPolop98",
     title: "گوشی آیفون 13 پرومکس",
-    // price: "25,500,000",
     price: 25500000,
     image: `https://storage.torob.com/backend-api/base/images/Yp/UF/YpUF7wAUwqd7Y61p.png_/216x216.jpg`,
     colors: ["bg-red-400", "bg-green-400", "bg-yellow-400", "bg-blue-400"],
@@ -315,7 +313,6 @@ export const products = [
   {
     id: "recF0KpwlkF7e8kXO",
     title: "مک بوک VivoBook X5",
-    // price: "32,500,000",
     price: 32500000,
     image: `https://storage.torob.com/backend-api/base/images/Ij/mC/IjmCjKNGb2rv5Ek8.png_/216x216.jpg`,
     colors: ["bg-red-400", "bg-green-400", "bg-yellow-400", "bg-gray-400"],
@@ -325,7 +322,6 @@ export const products = [
   {
     id: "recEHmzvupvT8ZONH",
     title: "مک بوک Air MGN93",
-    // price: "57,400,000",
     price: 57400000,
     image: `https://storage.torob.com/backend-api/base/images/xh/rq/xhrqvVUGmm_z1gM1.jpg_/216x216.jpg`,
     colors: ["bg-red-400", "bg-green-400", "bg-yellow-400"],
@@ -335,7 +331,6 @@ export const products = [
   {
     id: "rec5NBwZ5zCD9nfF0",
     title: "گوشی Redmi 9A",
-    // price: "10,250,000",
     price: 10250000,
     image: `https://www.technolife.ir/image/color_image_TLP-1658_8f8f8f_33f7172f-c9ab-441b-be9a-a19c9ed632b7.png`,
     colors: ["bg-red-400", "bg-green-400"],
@@ -352,53 +347,51 @@ export const products = [
     company: "اپل",
     category: "تلفن همراه",
   },
-  // {
-  //   id: "recoM2MyHJGHLVi5l",
-  //   title: "مک بوک Apple MKGR3 1TB",
-  //   price: "72,500,000",
-  //   image: `https://storage.torob.com/backend-api/base/images/fS/Og/fSOgIywBaXrt7IpU.jpeg_/216x216.jpg`,
-  //   colors: ["bg-black", "bg-gray-400"],
-  //   company: "اپل",
-  //   category: "لپ تاپ",
-  // },
+  {
+    id: "recoM2MyHJGHLVi5l",
+    title: "مک بوک Apple MKGR3 1TB",
+    price: 72500000,
+    image: `https://storage.torob.com/backend-api/base/images/fS/Og/fSOgIywBaXrt7IpU.jpeg_/216x216.jpg`,
+    colors: ["bg-yellow-400", "bg-purple-400"],
+    company: "اپل",
+    category: "لپ تاپ",
+  },
   {
     id: "recotY5Nh00DQFdkm",
     title: "گوشی سامسونگ مدل S21",
-    // price: "12,350,000",
     price: 12350000,
     image: `https://storage.torob.com/backend-api/base/images/hG/hX/hGhXpsWoNMKH8rQi.png`,
     colors: ["bg-yellow-400", "bg-purple-400"],
     company: "سامسونگ",
     category: "تلفن همراه",
   },
-  // {
-  //   id: "rec1Ntk7siEEW9ha1",
-  //   title: "گوشی آیفون 14 پرومکس",
-  //   price: "21,500,000",
-  //   image: `https://storage.torob.com/backend-api/base/images/yt/A0/ytA0W9pMJQtmFbzN.png_/216x216.jpg`,
-  //   colors: ["bg-orange-500", , "bg-yellow-400", "bg-purple-500"],
-  //   company: "اپل",
-  //   category: "تلفن همراه",
-  // },
+  {
+    id: "rec1Ntk7siEEW9ha1",
+    title: "گوشی آیفون 14 پرومکس",
+    price: 21500000,
+    image: `https://storage.torob.com/backend-api/base/images/yt/A0/ytA0W9pMJQtmFbzN.png_/216x216.jpg`,
+    colors: ["bg-blue-400", "bg-gray-400"],
+    company: "اپل",
+    category: "تلفن همراه",
+  },
   {
     id: "recNZ0koOqEmilmoz",
     title: "اپل واچ سری 6",
-    // price: "2,500,000",
     price: 2500000,
     image: `https://storage.torob.com/backend-api/base/images/XB/q9/XBq9Rbj7Jk32Lfbj.jpg_/216x216.jpg`,
     colors: ["bg-blue-400", "bg-gray-400"],
     company: "اپل",
     category: "ساعت هوشمند",
   },
-  // {
-  //   id: "recrfxv3EwpvJwvjq",
-  //   title: "ساعت شیائومی ایمیلب",
-  //   price: "2,250,000",
-  //   image: `https://lojima.com/wp-content/uploads/2022/11/%D8%B3%D8%A7%D8%B9%D8%AA-%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF-%D8%A7%DB%8C%D9%85%DB%8C%D9%84%D8%A8-%D9%85%D8%AF%D9%84-KW66-45mm.jpg`,
-  //   colors: ["bg-blue-500", "bg-green-600", "bg-pink-400", "bg-gray-100", "bg-yellow-400"],
-  //   company: "شیائومی",
-  //   category: "ساعت هوشمند",
-  // },
+  {
+    id: "recrfxv3EwpvJwvjq",
+    title: "ساعت شیائومی ایمیلب",
+    price: 2250000,
+    image: `https://lojima.com/wp-content/uploads/2022/11/%D8%B3%D8%A7%D8%B9%D8%AA-%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF-%D8%A7%DB%8C%D9%85%DB%8C%D9%84%D8%A8-%D9%85%D8%AF%D9%84-KW66-45mm.jpg`,
+    colors: ["bg-red-400", "bg-green-400"],
+    company: "شیائومی",
+    category: "ساعت هوشمند",
+  },
   // {
   //   id: "recoW8ecgjtKx2Sj2",
   //   title: "گوشی سامسونگ مدل A32",

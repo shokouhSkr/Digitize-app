@@ -1,10 +1,10 @@
+import homeIcon from "./images/icons/home.svg";
+import bagIcon from "./images/icons/bag.svg";
+import faveIcon from "./images/icons/lovely.svg";
+import cateIcon from "./images/icons/category.svg";
 import logoDesk from "./images/logo/Logo-laptop.png";
 import logoMob from "./images/logo/Logo-phone.png";
 import searchIcon from "./images/icons/search-normal.svg";
-import MainIcon from "./images/icons/MainIcon";
-import FavIcon from "./images/icons/FavIcon";
-import CartIcon from "./images/icons/CartIcon";
-import CategoryIcon from "./images/icons/CategoryIcon";
 import map from "./images/map.jpg";
 import line from "./images/icons/Line 8.svg";
 import phone from "./images/icons/call.svg";
@@ -26,13 +26,13 @@ import asusLogo from "./images/brands-logo/asus.png";
 import samsungLogo from "./images/brands-logo/samsung-logo.png";
 
 export {
+  homeIcon,
+  bagIcon,
+  faveIcon,
+  cateIcon,
   logoDesk,
   logoMob,
   searchIcon,
-  MainIcon,
-  FavIcon,
-  CartIcon,
-  CategoryIcon,
   map,
   line,
   phone,

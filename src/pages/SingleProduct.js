@@ -24,7 +24,7 @@ const SingleProduct = () => {
       <section className="mb-20 mt-6 px-[3%] md:mb-8 md:mt-28">
         <BreadCrumbs {...product} />
 
-        <div className="gap-[5%] p-6 md:flex md:rounded-[4px] md:bg-[#fdfdfd]">
+        <div className="gap-[5%] p-2 md:flex md:rounded-[4px] md:bg-[#fdfdfd]">
           <ProductImages {...product} />
           <div className="w-full">
             <div className="mb-10 flex flex-col items-center justify-center text-slate-800 md:mb-5 md:items-start">

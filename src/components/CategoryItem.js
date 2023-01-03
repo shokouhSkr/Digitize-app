@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const CategoryItem = ({ logo, title, companies }) => {
   return (
-    <div className="flex items-end gap-2">
+    <div className="flex items-end gap-2 text-slate-700">
       <div className="flex h-56 w-[146px] min-w-[146px] max-w-[146px] flex-col items-center justify-between overflow-hidden rounded-[10px] bg-gray-200">
         <span className="mt-6 text-sm">{title}</span>
         <div className="relative h-40 w-40 rounded-[10px]">

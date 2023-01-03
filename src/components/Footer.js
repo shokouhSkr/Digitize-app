@@ -22,7 +22,7 @@ const Footer = () => {
             <li key={id} className="list-none">
               <Link to={url} onClick={() => linkHandler(id)}>
                 <div className="flex items-center">
-                  {icon}
+                  <img src={icon} alt={title} />
                   <p
                     className={`mr-2 text-sm font-bold text-slate-800 ${
                       active.id === id ? "block" : "hidden"
