@@ -86,7 +86,6 @@ const Filters = () => {
       <div className={`${active.filterPrice ? "block" : "hidden"}`}>
         <PriceRange />
       </div>
-
       {/* end of price */}
     </section>
   );

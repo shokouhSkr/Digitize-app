@@ -17,6 +17,7 @@ import ProductImages from "./ProductImages";
 import ProductShipping from "./ProductShipping";
 import ProductFeatures from "./ProductFeatures";
 import AddToCart from "./AddToCart";
+import CategoryItem from "./CategoryItem";
 
 export {
   Header,
@@ -38,4 +39,5 @@ export {
   ProductShipping,
   ProductFeatures,
   AddToCart,
+  CategoryItem,
 };

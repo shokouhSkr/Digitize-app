@@ -1,13 +1,4 @@
-export const getUniqueValues = (data, type) => {
-  let unique = data.map((item) => item[type]);
-
-  // to get an array, instead of an array of arrays
-  if (type === "colors") unique = unique.flat();
-
-  // console.log(["all", ...new Set(unique)]);
-  // console.log([...new Set(unique)]);
-  return [...new Set(unique)];
-};
+import { xiamyLogo, appleLogo, asusLogo, samsungLogo } from "../assets";
 
 export const formatPrice = (price) => {
   let newPrice = String(price)
@@ -22,4 +13,52 @@ export const formatPrice = (price) => {
     .join(",");
 
   return newPrice;
+};
+
+export const getUniqueValues = (data, type) => {
+  let unique = data.map((item) => item[type]);
+
+  // to get an array, instead of an array of arrays
+  if (type === "colors") unique = unique.flat();
+
+  // console.log(["all", ...new Set(unique)]);
+  return [...new Set(unique)];
+};
+
+export const getLogoCompany = (company) => {
+  switch (company) {
+    case "سامسونگ":
+      return samsungLogo;
+
+    case "اپل":
+      return appleLogo;
+
+    case "شیائومی":
+      return xiamyLogo;
+
+    case "ایسوس":
+      return asusLogo;
+  }
+};
+
+export const getColorNames = (title) => {
+  switch (title) {
+    case "bg-red-400":
+      return "قرمز";
+
+    case "bg-blue-400":
+      return "آبی";
+
+    case "bg-green-400":
+      return "سبز";
+
+    case "bg-yellow-400":
+      return "زرد";
+
+    case "bg-purple-400":
+      return "بنفش";
+
+    case "bg-gray-400":
+      return "مشکی";
+  }
 };

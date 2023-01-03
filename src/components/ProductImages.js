@@ -1,5 +1,5 @@
 import React from "react";
-import { preProductImg } from "../assets";
+import { preProductImg1, preProductImg2, preProductImg3 } from "../assets";
 
 const ProductImages = ({ image, title }) => {
   return (
@@ -9,14 +9,14 @@ const ProductImages = ({ image, title }) => {
 
       {/* images */}
       <div className="hidden gap-2 md:flex">
-        <div className="w-16 rounded-xl border-2 border-gray-300">
-          <img src={preProductImg} alt="preview" />
+        <div className="w-16 rounded-xl border-2 border-gray-300 p-1">
+          <img src={preProductImg1} alt="preview" />
         </div>
         <div className="w-16 rounded-xl border-2 border-gray-300">
-          <img src={preProductImg} alt="preview" />
+          <img src={preProductImg2} alt="preview" />
         </div>
-        <div className="w-16 rounded-xl border-2 border-gray-300">
-          <img src={preProductImg} alt="preview" />
+        <div className="w-16 rounded-xl border-2 border-gray-300 p-1">
+          <img src={preProductImg3} alt="preview" />
         </div>
       </div>
     </div>

@@ -14,7 +14,16 @@ import arrow from "./images/icons/arrow-down.svg";
 import filterIcon from "./images/icons/filter.svg";
 import sortIcon from "./images/icons/Sort.svg";
 import leftArrow from "./images/icons/Arrow---Left-2.svg";
-import preProductImg from "./images/products/previewimage8.png";
+import preProductImg1 from "./images/products/previewimage 9.png";
+import preProductImg2 from "./images/products/previewimage8.png";
+import preProductImg3 from "./images/products/image 11.png";
+import phoneCategory from "./images/products/phone.png";
+import laptopCategory from "./images/products/laptop.png";
+import watchCategory from "./images/products/watch.png";
+import xiamyLogo from "./images/brands-logo/xiamy.png";
+import appleLogo from "./images/brands-logo/apple.png";
+import asusLogo from "./images/brands-logo/asus.png";
+import samsungLogo from "./images/brands-logo/samsung-logo.png";
 
 export {
   logoDesk,
@@ -33,5 +42,14 @@ export {
   filterIcon,
   sortIcon,
   leftArrow,
-  preProductImg,
+  phoneCategory,
+  laptopCategory,
+  watchCategory,
+  preProductImg1,
+  preProductImg2,
+  preProductImg3,
+  xiamyLogo,
+  appleLogo,
+  asusLogo,
+  samsungLogo,
 };

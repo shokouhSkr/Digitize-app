@@ -4,10 +4,6 @@ import phoneCat from "./assets/images/icons/phone-category-icon.svg";
 import laptopCat from "./assets/images/icons/laptop-category-icon.svg";
 import watchCat from "./assets/images/icons/watch-category-icon.svg";
 
-import apple from "./assets/images/brands-logo/apple.svg";
-import asus from "./assets/images/brands-logo/asus.svg";
-import xiaomi from "./assets/images/brands-logo/image 23.svg";
-
 // SVGs
 export const sellerIcon = (
   <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -270,17 +266,14 @@ export const brands = [
   {
     id: 11,
     title: "اپل",
-    image: `${apple}`,
   },
   {
     id: 22,
     title: "شیائومی",
-    image: `${xiaomi}`,
   },
   {
     id: 33,
     title: "ایسوس",
-    image: `${asus}`,
   },
 ];
 
@@ -368,15 +361,16 @@ export const products = [
   //   company: "اپل",
   //   category: "لپ تاپ",
   // },
-  // {
-  //   id: "recotY5Nh00DQFdkm",
-  //   title: "گوشی سامسونگ مدل S21",
-  //   price: "12,350,000",
-  //   image: `https://storage.torob.com/backend-api/base/images/hG/hX/hGhXpsWoNMKH8rQi.png`,
-  //   colors: ["bg-orange-500", , "bg-yellow-400", "bg-purple-500"],
-  //   company: "سامسونگ",
-  //   category: "تلفن همراه",
-  // },
+  {
+    id: "recotY5Nh00DQFdkm",
+    title: "گوشی سامسونگ مدل S21",
+    // price: "12,350,000",
+    price: 12350000,
+    image: `https://storage.torob.com/backend-api/base/images/hG/hX/hGhXpsWoNMKH8rQi.png`,
+    colors: ["bg-yellow-400", "bg-purple-400"],
+    company: "سامسونگ",
+    category: "تلفن همراه",
+  },
   // {
   //   id: "rec1Ntk7siEEW9ha1",
   //   title: "گوشی آیفون 14 پرومکس",
@@ -443,13 +437,14 @@ export const products = [
   //   company: "شیائومی",
   //   category: "ساعت هوشمند",
   // },
-  // {
-  //   id: "rec7CjDWKRgNQtrKe",
-  //   title: "ساعت شیائومی Amazfit",
-  //   price: "2,100,000",
-  //   image: `https://storage.torob.com/backend-api/base/images/6l/_A/6l_ACi_f9ccb-r2c.jpg_/216x216.jpg`,
-  //   colors: ["bg-green-600", "bg-blue-500"],
-  //   company: "شیائومی",
-  //   category: "ساعت هوشمند",
-  // },
+  {
+    id: "rec7CjDWKRgNQtrKe",
+    title: "ساعت شیائومی Amazfit",
+    // price: "2,100,000",
+    price: 2100000,
+    image: `https://storage.torob.com/backend-api/base/images/6l/_A/6l_ACi_f9ccb-r2c.jpg_/216x216.jpg`,
+    colors: ["bg-blue-400", "bg-yellow-400", "bg-purple-400"],
+    company: "شیائومی",
+    category: "ساعت هوشمند",
+  },
 ];
