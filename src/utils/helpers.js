@@ -8,3 +8,18 @@ export const getUniqueValues = (data, type) => {
   // console.log([...new Set(unique)]);
   return [...new Set(unique)];
 };
+
+export const formatPrice = (price) => {
+  let newPrice = String(price)
+    .split("")
+    .reverse()
+    .join("")
+    .match(/.{1,3}/g)
+    .map(function (x) {
+      return x.split("").reverse().join("");
+    })
+    .reverse()
+    .join(",");
+
+  return newPrice;
+};

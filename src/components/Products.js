@@ -4,6 +4,7 @@ import { ProductColors } from "../components";
 import { Link } from "react-router-dom";
 import { products } from "../data";
 import { FiHeart } from "react-icons/fi";
+import { formatPrice } from "../utils/helpers";
 
 const Products = () => {
   // products => filtered products
@@ -46,7 +47,7 @@ const Products = () => {
                   className="flex items-center justify-end text-[11px] text-red-600 xs:text-[13px]
                  2xl:text-sm"
                 >
-                  {price} تومان
+                  {formatPrice(price)} تومان
                 </p>
               </div>
 

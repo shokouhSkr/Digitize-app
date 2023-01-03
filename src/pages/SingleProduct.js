@@ -2,6 +2,7 @@ import React from "react";
 
 import { useParams } from "react-router-dom";
 import { products } from "../data";
+import { formatPrice } from "../utils/helpers";
 import {
   PageHero,
   BreadCrumbs,
@@ -51,7 +52,7 @@ const SingleProduct = () => {
             <ProductFeatures />
           </div>
 
-          <AddToCart price={product.price} />
+          <AddToCart price={formatPrice(product.price)} />
         </div>
       </section>
     </main>
