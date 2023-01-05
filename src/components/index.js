@@ -18,6 +18,10 @@ import ProductShipping from "./ProductShipping";
 import ProductFeatures from "./ProductFeatures";
 import AddToCart from "./AddToCart";
 import CategoryItem from "./CategoryItem";
+import Checkout from "./Checkout";
+import CartItems from "./CartItems";
+import SingleCartItem from "./SingleCartItem";
+import ShoppingButtons from './ShoppingButtons'
 
 export {
   Header,
@@ -40,4 +44,8 @@ export {
   ProductFeatures,
   AddToCart,
   CategoryItem,
+  Checkout,
+  CartItems,
+  SingleCartItem,
+  ShoppingButtons,
 };

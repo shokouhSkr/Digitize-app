@@ -26,7 +26,13 @@ const CategoryItem = ({ logo, title, companies }) => {
                   src={getLogoCompany(company)}
                   alt={company}
                   className={`${
-                    company === "ایسوس" ? "pt-5" : company === "سامسونگ" ? "pt-6" : null
+                    company === "ایسوس"
+                      ? "pt-5"
+                      : company === "سامسونگ"
+                      ? "pt-6"
+                      : company === "اپل"
+                      ? "pt-0"
+                      : "pt-2"
                   }`}
                 />
               </div>
