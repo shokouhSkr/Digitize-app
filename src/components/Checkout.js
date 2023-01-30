@@ -3,27 +3,27 @@ import { ShoppingButtons } from "../components";
 
 const Checkout = () => {
   return (
-    <section className="basis-2/5">
-      <div className="mb-3 rounded-md bg-white p-3 text-sm">
+    <section className="mt-[54px] basis-2/5">
+      <div className="mb-6 rounded-md bg-white p-5 text-sm md:p-8">
         {/* mobile */}
         <div className="mb-5 flex flex-1 justify-between">
-          <p>مجموع قیمت:</p>
-          <p>23,340,000 تومان</p>
+          <p className="text-base font-medium md:text-sm">مجموع قیمت:</p>
+          <p className="text-lg text-red-600 md:text-base">23,340,000 تومان</p>
         </div>
-        <button type="button" className="md:hidden">
+        <button type="button" className="text-[13px] text-slate-800 md:hidden">
           کد تخفیف دارید؟
         </button>
 
         {/* laptop */}
         <div className="mb-10 hidden md:block">
-          <div className="mb-5 flex items-center justify-between">
-            <p>کد تخفیف:</p>
+          <div className="mb-6 flex items-center justify-between">
+            <p className="text-sm font-light">کد تخفیف:</p>
 
             <form className="flex rounded-md">
               <input
                 type="text"
                 placeholder="123ABC"
-                className="w-24 rounded-tr-md rounded-br-md border border-slate-800 text-center focus:outline-none"
+                className="w-24 rounded-tr-md rounded-br-md border border-slate-800 text-center opacity-25 focus:border-none"
               />
               <button
                 type="button"
@@ -34,14 +34,14 @@ const Checkout = () => {
             </form>
           </div>
 
-          <div className="flex justify-between">
+          <div className="mb-12 flex justify-between font-medium">
             <p>تخفیف:</p>
-            <p>25,000 تومان</p>
+            <p className="text-slate-800">25,000 تومان</p>
           </div>
         </div>
-        <div className="hidden justify-between md:flex">
+        <div className="hidden justify-between font-medium md:flex">
           <p>قیمت نهایی:</p>
-          <p>2,850,0000 تومان</p>
+          <p className="text-red-600">2,850,0000 تومان</p>
         </div>
       </div>
 

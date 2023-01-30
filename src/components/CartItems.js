@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
 import { SingleCartItem } from "../components";
 
 const CartItems = () => {
@@ -15,6 +16,14 @@ const CartItems = () => {
       ))}
 
       {/* laptop */}
+      <div className="mb-3 hidden items-center justify-between bg-transparent px-3 py-1.5 md:flex">
+        <Link to="/" className="text-lg font-medium text-slate-800">
+          سبد‌ خرید
+        </Link>
+        <Link to="/" className="text-sm text-red-400">
+          بازگشت به خانه
+        </Link>
+      </div>
       <div className="hidden flex-col rounded-md bg-[#fdfdfd] p-3 text-sm md:flex">
         {cart.map((item, i) => (
           <SingleCartItem />

@@ -19,7 +19,7 @@ const Category = () => {
     <main className="md:mt-[92px]">
       <PageHero title="دسته‌بندی" />
 
-      <section className="mb-20 mt-6 px-[5%] md:mb-8 md:mt-32 md:px-[3%]">
+      <section className="mb-24 mt-6 px-[5%] md:mb-8 md:mt-32 md:px-[3%]">
         <CategoryItem logo={phoneCategory} title="تلفن همراه" companies={uniquePhoneCompanies} />
         <div className="my-4 h-[0.5px] w-2/3 bg-gray-200"></div>
         <CategoryItem logo={laptopCategory} title="لپ تاپ" companies={uniqueLaptopCompanies} />
