@@ -8,7 +8,11 @@ const Favorites = () => {
     <main>
       <PageHero title="علاقه‌مندی" />
 
-      {cart.length === 0 && <p className="text-center">آیتم موردعلاقه ای وجود ندارد</p>}
+      <section className="mt-8 mb-24 px-[5%] md:mt-28 md:min-h-[calc(100vh-24rem)] md:px-[3%]">
+        <h1 className="mb-6 pt-36 text-center text-xl text-slate-800">
+          آیتم موردعلاقه ای وجود ندارد.
+        </h1>
+      </section>
     </main>
   );
 };

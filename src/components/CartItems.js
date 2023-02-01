@@ -4,17 +4,18 @@ import { Link } from "react-router-dom";
 import { SingleCartItem } from "../components";
 
 const CartItems = () => {
-  const cart = ["one", "two", "three", "four", "five", "six"];
+  const cart = ["two", "two", "two", "two", "two"];
 
   return (
-    <section className="mb-8 h-2/3 overflow-scroll md:basis-3/5">
+    <section className="mb-8 h-2/3 rounded-md md:basis-3/5">
       {/* mobile */}
-      {cart.map((item) => (
-        <div className="mb-3 rounded-md bg-[#fdfdfd] p-3 text-sm shadow md:mb-0 md:hidden">
-          <SingleCartItem />
-        </div>
-      ))}
-
+      <div className="mb-20 h-56 overflow-scroll md:hidden">
+        {cart.map((item) => (
+          <div className="mb-3 rounded-md bg-[#fdfdfd] p-3 text-sm shadow md:mb-0 md:hidden">
+            <SingleCartItem />
+          </div>
+        ))}
+      </div>
       {/* laptop */}
       <div className="mb-3 hidden items-center justify-between bg-transparent px-3 py-1.5 md:flex">
         <Link to="/" className="text-lg font-medium text-slate-800">
@@ -24,7 +25,7 @@ const CartItems = () => {
           بازگشت به خانه
         </Link>
       </div>
-      <div className="hidden flex-col rounded-md bg-[#fdfdfd] p-3 text-sm md:flex">
+      <div className="hidden max-h-[600px] flex-col overflow-scroll rounded-md bg-[#fdfdfd] p-3 text-sm md:flex">
         {cart.map((item, i) => (
           <SingleCartItem />
         ))}

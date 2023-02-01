@@ -13,8 +13,10 @@ const Backdrop = ({ onClose }) => {
 const ModalOverlay = ({ children }) => {
   return (
     <div
-      className="fixed bottom-0 left-0 right-0
-       z-50 rounded-tl-3xl rounded-tr-3xl bg-[#fdfdfdf7] p-6 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.2)] duration-1000 md:hidden"
+      className={`fixed bottom-0 left-0 right-0
+       z-50 translate-y-0 rounded-tl-3xl rounded-tr-3xl bg-[#fdfdfdf7] p-6 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.2)] transition-all duration-300
+         md:hidden
+       `}
     >
       {children}
     </div>

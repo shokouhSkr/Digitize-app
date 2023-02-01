@@ -13,7 +13,7 @@ const CategoryItem = ({ logo, title, companies }) => {
         </div>
       </div>
       <div className="flex h-56 flex-col justify-between overflow-hidden">
-        <Link className="self-end text-sm text-[#ff755d] md:text-base">مشاهده همه</Link>
+        <Link className="self-end text-sm text-red-400 md:text-base">مشاهده همه</Link>
 
         <div className="flex gap-2 overflow-auto">
           {companies.map((company, index) => (

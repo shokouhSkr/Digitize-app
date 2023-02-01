@@ -36,14 +36,14 @@ const Home = () => {
               <button
                 type="button"
                 onClick={filterHandler}
-                className="flex w-full items-center justify-center rounded-md border-2 border-[#ff755d] bg-[#ff755d] p-2 text-white"
+                className="flex w-full items-center justify-center rounded-md border-2 border-red-400 bg-red-400 p-2 text-white"
               >
                 تایید
               </button>
               <button
                 type="button"
                 onClick={clearFilterHandler}
-                className="flex w-full items-center justify-center rounded-md border-2 border-[#fc5d5d] bg-[#ffcbcb] p-2 text-[#ff755d]"
+                className="flex w-full items-center justify-center rounded-md border-2 border-[#fc5d5d] bg-[#ffd1d1] p-2 text-red-400"
               >
                 لغو فیلتر
               </button>
@@ -58,14 +58,14 @@ const Home = () => {
               <button
                 type="button"
                 onClick={sortHandler}
-                className="flex w-full items-center justify-center rounded-md border-2 border-[#ff755d] bg-[#ff755d] p-2 text-white"
+                className="flex w-full items-center justify-center rounded-md border-2 border-red-400 bg-red-400 p-2 text-white"
               >
                 تایید
               </button>
               <button
                 type="button"
                 onClick={clearSortHandler}
-                className="flex w-full items-center justify-center rounded-md border-2 border-[#fc5d5d] bg-[#ffcbcb] p-2 text-[#ff755d]"
+                className="flex w-full items-center justify-center rounded-md border-2 border-[#fc5d5d] bg-[#ffcbcb] p-2 text-red-400"
               >
                 لغو فیلتر
               </button>

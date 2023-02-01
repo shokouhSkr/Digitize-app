@@ -3,8 +3,8 @@ import { ShoppingButtons } from "../components";
 
 const Checkout = () => {
   return (
-    <section className="mt-[54px] basis-2/5">
-      <div className="mb-6 rounded-md bg-white p-5 text-sm md:p-8">
+    <section className="mt-[53px] basis-2/5">
+      <div className="fixed bottom-[135px] left-4 right-4 mb-6 rounded-md bg-[#ffffffea] p-5 text-sm md:static md:mt-0 md:bg-white md:p-8">
         {/* mobile */}
         <div className="mb-5 flex flex-1 justify-between">
           <p className="text-base font-medium md:text-sm">مجموع قیمت:</p>

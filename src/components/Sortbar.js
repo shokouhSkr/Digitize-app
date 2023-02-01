@@ -18,6 +18,7 @@ const Sortbar = () => {
 
       {sortOptions.map((item) => {
         const { id, title } = item;
+
         return (
           <button
             key={id}

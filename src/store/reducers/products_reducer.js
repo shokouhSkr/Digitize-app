@@ -11,6 +11,9 @@ const products_reducer = (state, action) => {
 
     case "CLOSE_SORT_MODAL":
       return { ...state, isSortModalOpen: false };
+
+    case "LIKE_PRODUCT":
+      return { ...state, isLiked: true };
   }
 };
 

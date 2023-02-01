@@ -11,7 +11,7 @@ const AddToCart = ({ price }) => {
         <button
           onClick
           type="button"
-          className="w-full rounded bg-[#ff755c] py-3 px-2 text-sm text-white 2xs:px-6 x:text-base md:hidden"
+          className="w-full rounded bg-red-400 py-3 px-2 text-sm text-white 2xs:px-6 x:text-base md:hidden"
         >
           <Link to="/cart">افزودن به سبد خرید</Link>
         </button>
@@ -51,12 +51,12 @@ const AddToCart = ({ price }) => {
           </div>
 
           <div className="text-left">
-            <p className="mb-2 text-2xl font-semibold text-[#ff755c] md:text-xl lg:text-2xl">
+            <p className="mb-2 text-2xl font-semibold text-red-400 md:text-xl lg:text-2xl">
               {price} <span className="text-base font-normal md:text-sm lg:text-base">تومان</span>
             </p>
             <button
               type="button"
-              className="w-full rounded bg-[#ff755c] px-2 py-3 text-[#fdfdfd] md:text-sm lg:text-base"
+              className="w-full rounded bg-red-400 px-2 py-3 text-[#fdfdfd] md:text-sm lg:text-base"
             >
               افزودن به سبد خرید
             </button>

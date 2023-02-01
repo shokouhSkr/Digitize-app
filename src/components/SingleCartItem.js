@@ -26,16 +26,16 @@ const SingleCartItem = () => {
         <div className="flex flex-col gap-6 py-2 text-xs 2xs:text-sm md:gap-6">
           <div className="flex items-center gap-1.5 md:gap-2">
             <p>{products[4].title}</p>
-            <div className={`h-4 w-4 rounded-full bg-red-400`}></div>
+            <div className={`h-3 w-3 rounded-full bg-red-400 2xs:h-4 2xs:w-4`}></div>
           </div>
           <p className="text-red-600">{products[4].price} تومان</p>
         </div>
       </div>
 
       <div className="flex flex-col justify-between py-1">
-        <div className="flex justify-end font-light text-red-500 md:text-lg">
+        <button className="flex justify-end font-light text-red-500 md:text-lg">
           <FiX />
-        </div>
+        </button>
         <div className="flex items-center gap-1">
           <button
             className="grid h-5 w-5 place-content-center rounded-full bg-gray-300 pt-0.5"

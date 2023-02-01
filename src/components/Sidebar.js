@@ -22,6 +22,7 @@ const Sidebar = () => {
           <div className="mb-1 text-xs lg:text-sm">
             {categories.map((category) => {
               const { id, title, icon } = category;
+
               return (
                 <button
                   key={id}

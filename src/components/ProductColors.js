@@ -10,7 +10,7 @@ const ProductColors = ({ colors, width, height, singleProduct }) => {
           <span
             key={index}
             onClick={() => setMainColor(color)}
-            className={`-mx-1 rounded-full border-[2px] border-white ${
+            className={`-mx-1 rounded-full border-[2px] ${
               singleProduct && "cursor-pointer"
             } ${width} ${height} ${
               singleProduct && mainColor === color && "border-[3px] border-slate-800"

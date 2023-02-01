@@ -1,17 +1,44 @@
-import React, { useReducer, useContext } from "react";
+import React, { useReducer, useContext, useEffect } from "react";
+
+import axios from "axios";
 import reducer from "../reducers/products_reducer.js";
-import { products } from "../../data";
+import { products_url as url } from "../../utils/constants.js";
 
 const initialState = {
-  products: products,
   isFilterModalOpen: false,
   isSortModalOpen: false,
+  isLiked: false,
 };
 
 const ProductsContext = React.createContext();
 
 const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const fetchProducts = async (url) => {
+    const res = await axios.get(url);
+
+    const loadedProducts = [];
+    for (const key in res.data) {
+      const data = res.data[key];
+
+      loadedProducts.push({
+        id: key,
+        title: data.title,
+        image: data.image,
+        price: data.price,
+        category: data.category,
+        colors: data.colors,
+        company: data.company,
+      });
+    }
+
+    console.log(loadedProducts);
+  };
+
+  useEffect(() => {
+    fetchProducts(url);
+  }, []);
 
   const openFilterModal = () => {
     dispatch({ type: "OPEN_FILTER_MODAL" });
@@ -46,6 +73,10 @@ const ProductsProvider = ({ children }) => {
     dispatch({ type: "CLOSE_SORT_MODAL" });
   };
 
+  const likeProductHandler = (id) => {
+    dispatch({ type: "LIKE_PRODUCT", payload: id });
+  };
+
   return (
     <ProductsContext.Provider
       value={{
@@ -57,6 +88,7 @@ const ProductsProvider = ({ children }) => {
         sortHandler,
         clearSortHandler,
         closeModal,
+        likeProductHandler,
       }}
     >
       {children}
