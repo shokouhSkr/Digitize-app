@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
+import { useFilterContext } from "../store/context/filter_context";
 import { Filters } from "../components";
 import { categories } from "../data";
 
 const Sidebar = () => {
-  const [active, setActive] = useState(categories[0]);
-
-  const linkHandler = (id) => {
-    const selectedLink = categories.find((link) => link.id === id);
-    setActive(selectedLink);
-    // filterProducts()
-  };
+  const { updateFilters } = useFilterContext();
 
   return (
     <aside className="col-span-3 row-span-2 hidden md:block 3xl:col-span-2">
@@ -27,10 +22,9 @@ const Sidebar = () => {
                 <button
                   key={id}
                   type="button"
-                  onClick={() => linkHandler(id)}
-                  className={`${
-                    active.id === id ? "text-slate-800" : "text-gray-400"
-                  } mb-4 flex items-end`}
+                  name="category"
+                  onClick={updateFilters}
+                  className="mb-4 flex items-end text-gray-400 focus:text-slate-800"
                 >
                   <img src={icon} alt={title} className="ml-2" />
                   <p>{title}</p>

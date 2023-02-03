@@ -9,6 +9,7 @@ import Sortbar from "./Sortbar";
 import Filters from "./Filters";
 import FilterButtons from "./FilterButtons";
 import Checkbox from "./Checkbox";
+import RadioButton from "./RadioButton";
 import PriceRange from "./PriceRange";
 import ProductColors from "./ProductColors";
 import SortModal from "./SortModal";
@@ -21,7 +22,8 @@ import CategoryItem from "./CategoryItem";
 import Checkout from "./Checkout";
 import CartItems from "./CartItems";
 import SingleCartItem from "./SingleCartItem";
-import ShoppingButtons from './ShoppingButtons'
+import ShoppingButtons from "./ShoppingButtons";
+import Loading from "./Loading.js";
 
 export {
   Header,
@@ -33,6 +35,7 @@ export {
   Sidebar,
   Sortbar,
   Filters,
+  RadioButton,
   FilterButtons,
   Checkbox,
   PriceRange,
@@ -48,4 +51,5 @@ export {
   CartItems,
   SingleCartItem,
   ShoppingButtons,
+  Loading,
 };

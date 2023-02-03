@@ -39,16 +39,16 @@ const SingleCartItem = () => {
         <div className="flex items-center gap-1">
           <button
             className="grid h-5 w-5 place-content-center rounded-full bg-gray-300 pt-0.5"
-            // onClick={increaseAmount}
+            onClick={increaseAmount}
           >
             +
           </button>
           <span className="grid h-8 w-6 place-content-center rounded-sm border border-red-300 p-2">
-            {/* {amount} */}1
+            {amount}
           </span>
           <button
             className="grid h-5 w-5 place-content-center rounded-full bg-red-200 pt-0.5 text-red-500"
-            // onClick={decreaseAmount}
+            onClick={decreaseAmount}
           >
             -
           </button>

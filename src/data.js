@@ -302,7 +302,7 @@ export const productsCategories = [
 
 export const products = [
   {
-    id: "iuhgdSDEWQPolop98",
+    id: "auhgdSDEWQPolop98",
     title: "گوشی آیفون 13 پرومکس",
     price: 25500000,
     image: `https://storage.torob.com/backend-api/base/images/Yp/UF/YpUF7wAUwqd7Y61p.png_/216x216.jpg`,
@@ -311,7 +311,7 @@ export const products = [
     category: "تلفن همراه",
   },
   {
-    id: "recF0KpwlkF7e8kXO",
+    id: "becF0KpwlkF7e8kXO",
     title: "مک بوک VivoBook X5",
     price: 32500000,
     image: `https://storage.torob.com/backend-api/base/images/Ij/mC/IjmCjKNGb2rv5Ek8.png_/216x216.jpg`,
@@ -320,7 +320,7 @@ export const products = [
     category: "لپ تاپ",
   },
   {
-    id: "recEHmzvupvT8ZONH",
+    id: "cecEHmzvupvT8ZONH",
     title: "مک بوک Air MGN93",
     price: 57400000,
     image: `https://storage.torob.com/backend-api/base/images/xh/rq/xhrqvVUGmm_z1gM1.jpg_/216x216.jpg`,
@@ -329,7 +329,7 @@ export const products = [
     category: "لپ تاپ",
   },
   {
-    id: "rec5NBwZ5zCD9nfF0",
+    id: "dec5NBwZ5zCD9nfF0",
     title: "گوشی Redmi 9A",
     price: 10250000,
     image: `https://www.technolife.ir/image/color_image_TLP-1658_8f8f8f_33f7172f-c9ab-441b-be9a-a19c9ed632b7.png`,
@@ -338,9 +338,8 @@ export const products = [
     category: "تلفن همراه",
   },
   {
-    id: "recd1jIVIEChmiwhe",
+    id: "eecd1jIVIEChmiwhe",
     title: "گوشی آیفون 12 پرومکس",
-    // price: "27,500,000",
     price: 27500000,
     image: `https://storage.torob.com/backend-api/base/images/j0/9V/j09VTeEJ0OFWxrAO.png_/216x216.jpg`,
     colors: ["bg-yellow-400", "bg-purple-400"],

@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 
-import { ProductColors } from "../components";
+import { ProductColors, Loading } from "../components";
 import { useProductsContext } from "../store/context/products_context";
 import { Link } from "react-router-dom";
-import { products } from "../data";
 import { FiHeart } from "react-icons/fi";
 import { formatPrice } from "../utils/helpers";
 
 const Products = () => {
-  const { isLiked, likeProductHandler } = useProductsContext();
+  const { isLiked, likeProductHandler, products, error, isLoading } = useProductsContext();
   // products => filtered products
 
   // const [likedProduct, setLikedProduct] = useState({ id: products[0].id, isLiked: true });
@@ -18,6 +17,14 @@ const Products = () => {
   //   console.log(selectedLink.id);
   //   setLikedProduct({ id: selectedLink.id, isLiked: true });
   // };
+
+  if (isLoading) return <Loading />;
+  if (error)
+    return (
+      <main className="col-span-full m-auto mt-40 md:col-start-4">
+        <h1 className="text-xl text-slate-800 md:text-2xl">خطا در برقراری ارتباط!</h1>
+      </main>
+    );
 
   return (
     <section className="col-span-12 mb-24 grid grid-cols-2 gap-x-4 gap-y-8 px-[5%] md:col-span-9 md:grid-cols-3 md:px-0 2xl:grid-cols-4 3xl:col-span-10">

@@ -17,8 +17,8 @@ const AddToCart = ({ price }) => {
         </button>
 
         <div className="flex">
-          <p className="w-full font-semibold x:text-lg">
-            {price} <span className="text-sm">تومان</span>
+          <p className="w-full font-semibold text-slate-800 x:text-lg">
+            {price} <span className="text-sm font-normal">تومان</span>
           </p>
         </div>
       </section>

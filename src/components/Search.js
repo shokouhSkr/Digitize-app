@@ -1,7 +1,14 @@
 import React from "react";
+
+import { useFilterContext } from "../store/context/filter_context";
 import { searchIcon } from "../assets";
 
 const Search = () => {
+  const {
+    filters: { text },
+    updateFilters,
+  } = useFilterContext();
+
   return (
     <>
       {/* mobile */}
@@ -16,10 +23,10 @@ const Search = () => {
       >
         <img src={searchIcon} alt="search" class="p-3" />
         <input
-          type="text"
-          name="text"
+          type="search"
+          // name="text"
           // value={text}
-          onChange
+          // onChange={updateFilters}
           placeholder="جستجوی نام محصول، نام برند، و..."
           className="w-full rounded-[4px] border-none bg-stone-100 pl-2 text-sm font-normal focus:outline-none focus:ring-0"
         />

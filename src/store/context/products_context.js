@@ -8,6 +8,10 @@ const initialState = {
   isFilterModalOpen: false,
   isSortModalOpen: false,
   isLiked: false,
+  likedProducts: [],
+  isLoading: false,
+  error: false,
+  products: [],
 };
 
 const ProductsContext = React.createContext();
@@ -16,26 +20,34 @@ const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const fetchProducts = async (url) => {
-    const res = await axios.get(url);
+    dispatch({ type: "GET_PRODUCTS_BEGIN" }); // for loading
 
-    const loadedProducts = [];
-    for (const key in res.data) {
-      const data = res.data[key];
+    try {
+      const res = await axios.get(url);
 
-      loadedProducts.push({
-        id: key,
-        title: data.title,
-        image: data.image,
-        price: data.price,
-        category: data.category,
-        colors: data.colors,
-        company: data.company,
-      });
+      const loadedProducts = [];
+      for (const key in res.data) {
+        const data = res.data[key];
+
+        loadedProducts.push({
+          id: key,
+          title: data.title, // res.data[key].title
+          image: data.image,
+          price: data.price,
+          category: data.category,
+          colors: data.colors,
+          company: data.company,
+        });
+      }
+      console.log(loadedProducts);
+
+      dispatch({ type: "GET_PRODUCTS_SUCCESS", payload: loadedProducts }); // for fetching successful
+    } catch (error) {
+      dispatch({ type: "GET_PRODUCTS_ERROR" }); // for fetching failed
     }
-
-    console.log(loadedProducts);
   };
 
+  // const id = document.location.pathname.slice(9);
   useEffect(() => {
     fetchProducts(url);
   }, []);

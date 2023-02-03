@@ -1,20 +1,25 @@
 import React, { useState } from "react";
 
 import { Checkbox, PriceRange } from "../components/";
-import { filterCompIcon, filterColorsIcon, filterPriceIcon, products } from "../data";
+import { filterCompIcon, filterColorsIcon, filterPriceIcon } from "../data";
+import { useFilterContext } from "../store/context/filter_context.js";
 import { getUniqueValues } from "../utils/helpers";
 import { FiChevronDown } from "react-icons/fi";
 
 const Filters = () => {
-  const [active, setActive] = useState({
+  const [isActive, setIsActive] = useState({
     filterCompanies: false,
     filterColors: false,
     filterPrice: false,
   });
 
-  // filtered data <= products
-  const companies = getUniqueValues(products, "company");
-  const colors = getUniqueValues(products, "colors");
+  const {
+    filters: { minPrice, price, maxPrice },
+    allProducts,
+  } = useFilterContext();
+
+  const companies = getUniqueValues(allProducts, "company");
+  const colors = getUniqueValues(allProducts, "colors");
 
   return (
     <section>
@@ -23,7 +28,7 @@ const Filters = () => {
       {/* companies */}
       <div
         className={`mb-5 flex cursor-pointer items-end justify-between text-sm text-slate-800 md:text-xs lg:text-sm`}
-        onClick={() => setActive({ ...active, filterCompanies: !active.filterCompanies })}
+        onClick={() => setIsActive({ ...isActive, filterCompanies: !isActive.filterCompanies })}
       >
         <div className="mr-1.5 flex items-end gap-2">
           {filterCompIcon}
@@ -31,12 +36,12 @@ const Filters = () => {
         </div>
         <FiChevronDown
           className={`text-slate-800 transition-all duration-500 ${
-            active.filterCompanies && "rotate-180"
+            isActive.filterCompanies && "rotate-180"
           }`}
         />
       </div>
 
-      <div className={`${active.filterCompanies ? "block" : "hidden"}`}>
+      <div className={`${isActive.filterCompanies ? "block" : "hidden"}`}>
         {companies.map((title, index) => {
           return <Checkbox key={index} title={title} />;
         })}
@@ -46,7 +51,7 @@ const Filters = () => {
       {/* colors */}
       <div
         className={`mb-5 flex cursor-pointer items-end justify-between text-sm text-slate-800 md:text-xs lg:text-sm`}
-        onClick={() => setActive({ ...active, filterColors: !active.filterColors })}
+        onClick={() => setIsActive({ ...isActive, filterColors: !isActive.filterColors })}
       >
         <div className="mr-1.5 flex items-end gap-2">
           {filterColorsIcon}
@@ -54,14 +59,14 @@ const Filters = () => {
         </div>
         <FiChevronDown
           className={`text-slate-800 transition-all duration-500 ${
-            active.filterColors && "rotate-180"
+            isActive.filterColors && "rotate-180"
           }`}
         />
       </div>
 
-      <div className={`${active.filterColors ? "block" : "hidden"}`}>
+      <div className={`${isActive.filterColors ? "block" : "hidden"}`}>
         {colors.map((title, index) => {
-          return <Checkbox key={index} title={title} colors />;
+          return <Checkbox key={index} title={title} color />;
         })}
       </div>
       {/* end of colors */}
@@ -69,7 +74,7 @@ const Filters = () => {
       {/* price */}
       <div
         className={`mb-5 flex cursor-pointer items-end justify-between text-sm text-slate-800 md:text-xs lg:text-sm`}
-        onClick={() => setActive({ ...active, filterPrice: !active.filterPrice })}
+        onClick={() => setIsActive({ ...isActive, filterPrice: !isActive.filterPrice })}
       >
         <div className="mr-1.5 flex items-end gap-2">
           {filterPriceIcon}
@@ -78,12 +83,12 @@ const Filters = () => {
 
         <FiChevronDown
           className={`text-slate-800 transition-all duration-500 ${
-            active.filterPrice && "rotate-180"
+            isActive.filterPrice && "rotate-180"
           }`}
         />
       </div>
 
-      <div className={`${active.filterPrice ? "block" : "hidden"}`}>
+      <div className={`${isActive.filterPrice ? "block" : "hidden"}`}>
         <PriceRange />
       </div>
       {/* end of price */}

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 
+import { useProductsContext } from "../store/context/products_context";
 import { useParams } from "react-router-dom";
-import { products } from "../data";
 import { formatPrice } from "../utils/helpers";
 import {
   PageHero,
@@ -14,6 +14,8 @@ import {
 } from "../components";
 
 const SingleProduct = () => {
+  const { products } = useProductsContext();
+
   const { id } = useParams();
   const product = products.find((product) => product.id === id);
 

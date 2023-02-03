@@ -1,6 +1,7 @@
 import React from "react";
+
 import { sortOptions } from "../data";
-import { Checkbox } from "../components";
+import { RadioButton } from "../components";
 
 const SortModal = () => {
   return (
@@ -9,7 +10,7 @@ const SortModal = () => {
       {sortOptions.map((item) => {
         const { id, title } = item;
 
-        return <Checkbox key={id} title={title} />;
+        return <RadioButton key={id} title={title} />;
       })}
     </section>
   );
