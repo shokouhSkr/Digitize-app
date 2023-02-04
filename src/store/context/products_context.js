@@ -65,26 +65,6 @@ const ProductsProvider = ({ children }) => {
     dispatch({ type: "CLOSE_SORT_MODAL" });
   };
 
-  const filterHandler = () => {
-    // filterProducts()
-    dispatch({ type: "CLOSE_FILTER_MODAL" });
-  };
-
-  const clearFilterHandler = () => {
-    // clearFilters()
-    dispatch({ type: "CLOSE_FILTER_MODAL" });
-  };
-
-  const sortHandler = () => {
-    // sortProducts()
-    dispatch({ type: "CLOSE_SORT_MODAL" });
-  };
-
-  const clearSortHandler = () => {
-    // clearSort()
-    dispatch({ type: "CLOSE_SORT_MODAL" });
-  };
-
   const likeProductHandler = (id) => {
     dispatch({ type: "LIKE_PRODUCT", payload: id });
   };
@@ -95,10 +75,6 @@ const ProductsProvider = ({ children }) => {
         ...state,
         openFilterModal,
         openSortModal,
-        filterHandler,
-        clearFilterHandler,
-        sortHandler,
-        clearSortHandler,
         closeModal,
         likeProductHandler,
       }}

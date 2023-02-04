@@ -39,6 +39,9 @@ const filter_reducer = (state, action) => {
       if (price) {
         tempProducts = tempProducts.filter((product) => product.price <= price);
       }
+      // if (colors) {
+      //   tempProducts = tempProducts.filter((product) =>)
+      // }
 
       return { ...state, filteredProducts: tempProducts };
 
@@ -46,12 +49,11 @@ const filter_reducer = (state, action) => {
       return {
         ...state,
         filters: {
+          ...state.filters,
           text: "",
           category: "",
           checked: [],
-          maxPrice: 0,
-          minPrice: 0,
-          price: 0,
+          price: state.filters.maxPrice,
         },
       };
 

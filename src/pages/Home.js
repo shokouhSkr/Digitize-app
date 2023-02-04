@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useProductsContext } from "../store/context/products_context";
+import { useFilterContext } from "../store/context/filter_context";
 import {
   PageHero,
   Sidebar,
@@ -13,15 +14,19 @@ import {
 } from "../components";
 
 const Home = () => {
-  const {
-    isFilterModalOpen,
-    isSortModalOpen,
-    filterHandler,
-    clearFilterHandler,
-    sortHandler,
-    clearSortHandler,
-    closeModal,
-  } = useProductsContext();
+  const { isFilterModalOpen, isSortModalOpen, closeModal } = useProductsContext();
+
+  const { clearFilters } = useFilterContext();
+
+  const clearFilterHandler = () => {
+    closeModal();
+    clearFilters();
+  };
+
+  const clearSortHandler = () => {
+    closeModal();
+    // clearSort();
+  };
 
   return (
     <main className="md:mt-[92px]">
@@ -35,7 +40,7 @@ const Home = () => {
             <div className="mt-12 flex gap-4 md:hidden">
               <button
                 type="button"
-                onClick={filterHandler}
+                onClick={closeModal}
                 className="flex w-full items-center justify-center rounded-md border-2 border-red-400 bg-red-400 p-2 text-white"
               >
                 تایید
@@ -57,7 +62,7 @@ const Home = () => {
             <div className="mt-12 flex gap-4 md:hidden">
               <button
                 type="button"
-                onClick={sortHandler}
+                onClick={closeModal}
                 className="flex w-full items-center justify-center rounded-md border-2 border-red-400 bg-red-400 p-2 text-white"
               >
                 تایید
