@@ -5,7 +5,7 @@ import { Filters } from "../components";
 import { categories } from "../data";
 
 const Sidebar = () => {
-  const { updateFilters } = useFilterContext();
+  const { updateCategory } = useFilterContext();
 
   return (
     <aside className="col-span-3 row-span-2 hidden md:block 3xl:col-span-2">
@@ -23,7 +23,7 @@ const Sidebar = () => {
                   key={id}
                   type="button"
                   name="category"
-                  onClick={updateFilters}
+                  onClick={updateCategory}
                   className="mb-4 flex items-end text-gray-400 focus:text-slate-800"
                 >
                   <img src={icon} alt={title} className="ml-2" />

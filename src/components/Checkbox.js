@@ -6,7 +6,7 @@ import { getColorNames } from "../utils/helpers";
 const Checkbox = ({ title, color }) => {
   const {
     filters: { checked },
-    updateFilters,
+    updateCheckbox,
   } = useFilterContext();
 
   return (
@@ -14,8 +14,9 @@ const Checkbox = ({ title, color }) => {
       <input
         type="checkbox"
         id={title}
+        name={title}
         checked={checked.indexOf(title) === -1 ? false : true}
-        onClick={() => updateFilters(title)}
+        onChange={() => updateCheckbox(title)}
         className="form-checkbox h-3 w-3 rounded-[3px] text-red-400 focus:text-red-400 focus:ring-0 focus:ring-offset-0"
       />
 

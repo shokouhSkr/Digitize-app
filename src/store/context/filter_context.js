@@ -29,24 +29,35 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "LOAD_PRODUCTS", payload: products });
   }, [products]);
 
+  /////////////////////////////////
   useEffect(() => {
+    // dispatch({ type: "SORT_PRODUCTS" });
     dispatch({ type: "FILTER_PRODUCTS" });
   }, [products, state.filters]);
 
-  const updateFilters = (title) => {
-    // const name = e.target.name;
-    // let value = e.target.value;
-
-    // if (name === "category") value = e.target.textContent;
-
-    // for checkboxes:
+  const updateCheckbox = (title) => {
     const currentIndex = state.filters.checked.indexOf(title);
     const newChecked = [...state.filters.checked];
 
     if (currentIndex === -1) newChecked.push(title);
     else newChecked.splice(currentIndex, 1);
 
-    dispatch({ type: "UPDATE_FILTERS", payload: newChecked });
+    dispatch({ type: "UPDATE_CHECKBOX", payload: newChecked });
+  };
+
+  const updateSearch = (e) => {
+    const value = e.target.value;
+    dispatch({ type: "UPDATE_SEARCH", payload: value });
+  };
+
+  const updateCategory = (e) => {
+    const value = e.target.textContent;
+    dispatch({ type: "UPDATE_CATEGORY", payload: value });
+  };
+
+  const updatePrice = (e) => {
+    const value = Number(e.target.value);
+    dispatch({ type: "UPDATE_PRICE", payload: value });
   };
 
   const clearFilters = () => {
@@ -57,7 +68,10 @@ const FilterProvider = ({ children }) => {
     <FilterContext.Provider
       value={{
         ...state,
-        updateFilters,
+        updateCheckbox,
+        updateSearch,
+        updateCategory,
+        updatePrice,
         clearFilters,
       }}
     >

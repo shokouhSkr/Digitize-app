@@ -28,7 +28,7 @@ const Home = () => {
       <PageHero title="محصولات" />
       <FilterButtons />
 
-      <section className="mx-auto grid grid-cols-12 gap-x-5 gap-y-10 bg-[#f4f4f4] md:grid-rows-[55px_minmax(500px,_1fr)] md:p-4 md:px-[3%]">
+      <section className="mx-auto grid grid-cols-12 gap-x-5 gap-y-10 bg-[#f4f4f4] md:grid-rows-[55px_minmax(200px,_1fr)] md:p-4 md:px-[3%]">
         {isFilterModalOpen && (
           <Modal onClose={closeModal}>
             <Filters />

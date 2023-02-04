@@ -8,7 +8,7 @@ import { logoDesk } from "../assets";
 
 const Header = () => {
   // products => filtered_products
-  const { updateFilters } = useFilterContext();
+  const { updateCategory } = useFilterContext();
 
   return (
     <header className="fixed left-0 top-0 right-0 z-50 hidden bg-[#fdfdfd] px-[3%] py-6 text-sm font-bold text-slate-800 shadow-md md:block">
@@ -20,7 +20,7 @@ const Header = () => {
           {categories.map((category) => {
             const { id, title } = category;
             return (
-              <button key={id} name="category" onClick={updateFilters}>
+              <button key={id} onClick={updateCategory}>
                 {title}
               </button>
             );

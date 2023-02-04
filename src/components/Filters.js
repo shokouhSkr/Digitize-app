@@ -13,10 +13,7 @@ const Filters = () => {
     filterPrice: false,
   });
 
-  const {
-    filters: { minPrice, price, maxPrice },
-    allProducts,
-  } = useFilterContext();
+  const { allProducts } = useFilterContext();
 
   const companies = getUniqueValues(allProducts, "company");
   const colors = getUniqueValues(allProducts, "colors");
