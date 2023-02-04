@@ -13,10 +13,15 @@ const Filters = () => {
     filterPrice: false,
   });
 
-  const { allProducts } = useFilterContext();
+  const {
+    allProducts,
+    filters: { companies, colors },
+    updateCompanies,
+    updateColors,
+  } = useFilterContext();
 
-  const companies = getUniqueValues(allProducts, "company");
-  const colors = getUniqueValues(allProducts, "colors");
+  const uniqueCompanies = getUniqueValues(allProducts, "company");
+  const uniqueColors = getUniqueValues(allProducts, "colors");
 
   return (
     <section>
@@ -39,8 +44,16 @@ const Filters = () => {
       </div>
 
       <div className={`${isActive.filterCompanies ? "block" : "hidden"}`}>
-        {companies.map((title, index) => {
-          return <Checkbox key={index} title={title} />;
+        {uniqueCompanies.map((title, index) => {
+          // console.log(title); => اپل
+          return (
+            <Checkbox
+              key={index}
+              title={title}
+              checked={companies.indexOf(title) === -1 ? false : true}
+              onChange={() => updateCompanies(title)}
+            />
+          );
         })}
       </div>
       {/* end of companies */}
@@ -62,8 +75,16 @@ const Filters = () => {
       </div>
 
       <div className={`${isActive.filterColors ? "block" : "hidden"}`}>
-        {colors.map((title, index) => {
-          return <Checkbox key={index} title={title} color />;
+        {uniqueColors.map((title, index) => {
+          return (
+            <Checkbox
+              key={index}
+              title={title}
+              checked={colors.indexOf(title) === -1 ? false : true}
+              onChange={() => updateColors(title)}
+              color
+            />
+          );
         })}
       </div>
       {/* end of colors */}

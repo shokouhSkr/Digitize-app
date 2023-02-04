@@ -12,14 +12,17 @@ const filter_reducer = (state, action) => {
         filters: { ...state.filters, maxPrice: maxPrice, price: maxPrice },
       };
 
-    case "UPDATE_CHECKBOX":
-      return { ...state, filters: { ...state.filters, checked: action.payload } };
+    case "UPDATE_COMPANIES":
+      return { ...state, filters: { ...state.filters, companies: action.payload } };
 
     case "UPDATE_SEARCH":
       return { ...state, filters: { ...state.filters, text: action.payload } };
 
     case "UPDATE_CATEGORY":
       return { ...state, filters: { ...state.filters, category: action.payload } };
+
+    case "UPDATE_COLORS":
+      return { ...state, filters: { ...state.filters, colors: action.payload } };
 
     case "UPDATE_PRICE":
       return { ...state, filters: { ...state.filters, price: action.payload } };
@@ -28,7 +31,7 @@ const filter_reducer = (state, action) => {
       // always do this for filtering. we need a copy of all products
       let tempProducts = [...state.allProducts];
 
-      const { text, price, category, checked } = state.filters;
+      const { text, price, category, companies, colors } = state.filters;
 
       if (text) {
         tempProducts = tempProducts.filter((product) => product.title.startsWith(text));
@@ -39,9 +42,16 @@ const filter_reducer = (state, action) => {
       if (price) {
         tempProducts = tempProducts.filter((product) => product.price <= price);
       }
-      // if (colors) {
-      //   tempProducts = tempProducts.filter((product) =>)
-      // }
+      if (companies.length > 0) {
+        tempProducts = tempProducts.filter((product) =>
+          companies.some((company) => [product.company].includes(company))
+        );
+      }
+      if (colors.length > 0) {
+        tempProducts = tempProducts.filter((product) =>
+          colors.some((color) => [product.colors].flat().includes(color))
+        );
+      }
 
       return { ...state, filteredProducts: tempProducts };
 
@@ -52,7 +62,8 @@ const filter_reducer = (state, action) => {
           ...state.filters,
           text: "",
           category: "",
-          checked: [],
+          colors: [],
+          companies: [],
           price: state.filters.maxPrice,
         },
       };

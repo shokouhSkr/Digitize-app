@@ -22,8 +22,11 @@ const products_reducer = (state, action) => {
       return { ...state, isLoading: false, error: true };
 
     case "LIKE_PRODUCT":
-      console.log("here", action.payload);
-      return { ...state, isLiked: true };
+      const { isLiked } = state;
+      // const tempLiked = products;
+
+      // return { ...state, isLiked: !isLiked, likedProducts: tempLiked };
+      return { ...state, isLiked: !isLiked };
 
     default:
       throw new Error(`No Matching "${action.type}" - action type`);

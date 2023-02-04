@@ -7,7 +7,8 @@ const initialState = {
   allProducts: [],
   filteredProducts: [],
   filters: {
-    checked: [],
+    companies: [],
+    colors: [],
     text: "",
     category: "",
     maxPrice: 0,
@@ -35,14 +36,24 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "FILTER_PRODUCTS" });
   }, [products, state.filters]);
 
-  const updateCheckbox = (title) => {
-    const currentIndex = state.filters.checked.indexOf(title);
-    const newChecked = [...state.filters.checked];
+  const updateCompanies = (title) => {
+    const currentIndex = state.filters.companies.indexOf(title);
+    const newChecked = [...state.filters.companies];
 
     if (currentIndex === -1) newChecked.push(title);
     else newChecked.splice(currentIndex, 1);
 
-    dispatch({ type: "UPDATE_CHECKBOX", payload: newChecked });
+    dispatch({ type: "UPDATE_COMPANIES", payload: newChecked });
+  };
+
+  const updateColors = (title) => {
+    const currentIndex = state.filters.colors.indexOf(title);
+    const newChecked = [...state.filters.colors];
+
+    if (currentIndex === -1) newChecked.push(title);
+    else newChecked.splice(currentIndex, 1);
+
+    dispatch({ type: "UPDATE_COLORS", payload: newChecked });
   };
 
   const updateSearch = (e) => {
@@ -68,8 +79,9 @@ const FilterProvider = ({ children }) => {
     <FilterContext.Provider
       value={{
         ...state,
-        updateCheckbox,
+        updateCompanies,
         updateSearch,
+        updateColors,
         updateCategory,
         updatePrice,
         clearFilters,
