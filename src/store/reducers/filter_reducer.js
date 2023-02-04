@@ -34,12 +34,12 @@ const filter_reducer = (state, action) => {
         tempProducts = tempProducts.filter((product) => product.title.startsWith(text));
       }
       if (category) {
-        console.log(category, "ffsffssssssssssssssssssssss");
         tempProducts = tempProducts.filter((product) => product.category === category);
-        console.log(tempProducts, "temmmmmmmmmmmmmp");
+      }
+      if (price) {
+        tempProducts = tempProducts.filter((product) => product.price <= price);
       }
 
-      console.log("work", tempProducts);
       return { ...state, filteredProducts: tempProducts };
 
     case "CLEAR_FILTERS":
