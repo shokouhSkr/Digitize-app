@@ -8,7 +8,7 @@ const Checkbox = ({ title, color, checked, onChange }) => {
       <input
         type="checkbox"
         id={title}
-        name={title}
+        name="filter"
         checked={checked}
         onChange={onChange}
         className="form-checkbox h-3 w-3 rounded-[3px] text-red-400 focus:text-red-400 focus:ring-0 focus:ring-offset-0"

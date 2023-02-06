@@ -1,10 +1,12 @@
 import React from "react";
 
 import { useProductsContext } from "../store/context/products_context";
+import { useFilterContext } from "../store/context/filter_context";
 import { sortPhone, arrow, filterIcon } from "../assets";
 
 const FilterButtons = () => {
   const { openFilterModal, openSortModal } = useProductsContext();
+  const { sort } = useFilterContext();
 
   return (
     <div className="mb-6 flex gap-4 px-[5%] text-xs font-bold text-slate-800 2xs:text-sm xs:mb-8 md:hidden">
@@ -16,7 +18,7 @@ const FilterButtons = () => {
           <img src={sortPhone} alt="sort" className="-ml-1" />
           <img src={arrow} alt="arrow" className="h-4" />
         </div>
-        <span>مرتب‌سازی</span>
+        <span>{sort}</span>
       </div>
 
       <div

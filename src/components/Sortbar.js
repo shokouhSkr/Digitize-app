@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
+import { useFilterContext } from "../store/context/filter_context";
 import { sortOptions } from "../data";
 import { sortIcon } from "../assets";
 
 const Sortbar = () => {
+  const { updateSort } = useFilterContext();
   const [active, setActive] = useState(sortOptions[0]);
 
-  const linkHandler = (id) => {
+  const linkHandler = (e, id) => {
     const selectedLink = sortOptions.find((link) => link.id === id);
     setActive(selectedLink);
-    // sortProducts()
+    updateSort(e);
   };
 
   return (
@@ -22,8 +24,9 @@ const Sortbar = () => {
         return (
           <button
             key={id}
+            name="buttonSort"
             className={`relative ${active.id === id && "text-slate-800"}`}
-            onClick={() => linkHandler(id)}
+            onClick={(e) => linkHandler(e, id)}
           >
             {title}
             <span

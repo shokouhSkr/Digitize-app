@@ -1,14 +1,20 @@
 import React from "react";
 
+import { useFilterContext } from "../store/context/filter_context";
+
 const RadioButton = ({ title }) => {
+  const { sort, updateSort } = useFilterContext();
+
   return (
     <div className="my-5 mr-1.5 flex items-center">
       <input
         type="radio"
         id={title}
         value={title}
-        name={title}
-        className="form-radio h-3 w-3 rounded-[3px] text-red-400 focus:text-red-400 focus:ring-0 focus:ring-offset-0"
+        name="sort"
+        checked={sort === title ? true : false}
+        onChange={updateSort}
+        className="form-radio h-3 w-3 text-red-400 focus:text-red-400 focus:ring-0 focus:ring-offset-0"
       />
 
       <label

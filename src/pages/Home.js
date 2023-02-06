@@ -15,8 +15,7 @@ import {
 
 const Home = () => {
   const { isFilterModalOpen, isSortModalOpen, closeModal } = useProductsContext();
-
-  const { clearFilters } = useFilterContext();
+  const { clearFilters, clearSort } = useFilterContext();
 
   const clearFilterHandler = () => {
     closeModal();
@@ -25,7 +24,7 @@ const Home = () => {
 
   const clearSortHandler = () => {
     closeModal();
-    // clearSort();
+    clearSort();
   };
 
   return (

@@ -6,6 +6,7 @@ import reducer from "../reducers/filter_reducer.js";
 const initialState = {
   allProducts: [],
   filteredProducts: [],
+  sort: "مرتب‌سازی",
   filters: {
     companies: [],
     colors: [],
@@ -32,9 +33,9 @@ const FilterProvider = ({ children }) => {
 
   /////////////////////////////////
   useEffect(() => {
-    // dispatch({ type: "SORT_PRODUCTS" });
     dispatch({ type: "FILTER_PRODUCTS" });
-  }, [products, state.filters]);
+    dispatch({ type: "SORT_PRODUCTS" });
+  }, [products, state.filters, state.sort]);
 
   const updateCompanies = (title) => {
     const currentIndex = state.filters.companies.indexOf(title);
@@ -71,8 +72,20 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "UPDATE_PRICE", payload: value });
   };
 
+  const updateSort = (e) => {
+    let value = e.target.value;
+    const name = e.target.name;
+
+    if (name === "buttonSort") value = e.target.textContent;
+    dispatch({ type: "UPDATE_SORT", payload: { name, value } });
+  };
+
   const clearFilters = () => {
     dispatch({ type: "CLEAR_FILTERS" });
+  };
+
+  const clearSort = () => {
+    dispatch({ type: "CLEAR_SORT" });
   };
 
   return (
@@ -84,7 +97,9 @@ const FilterProvider = ({ children }) => {
         updateColors,
         updateCategory,
         updatePrice,
+        updateSort,
         clearFilters,
+        clearSort,
       }}
     >
       {children}

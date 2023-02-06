@@ -27,8 +27,8 @@ const filter_reducer = (state, action) => {
     case "UPDATE_PRICE":
       return { ...state, filters: { ...state.filters, price: action.payload } };
 
-    case "FILTER_PRODUCTS":
-      // always do this for filtering. we need a copy of all products
+    case "FILTER_PRODUCTS": {
+      // always do this for filtering. we need a copy of "all products"
       let tempProducts = [...state.allProducts];
 
       const { text, price, category, companies, colors } = state.filters;
@@ -54,6 +54,27 @@ const filter_reducer = (state, action) => {
       }
 
       return { ...state, filteredProducts: tempProducts };
+    }
+
+    case "UPDATE_SORT":
+      const { name, value } = action.payload;
+      return { ...state, sort: value };
+
+    case "SORT_PRODUCTS": {
+      const { sort, filteredProducts } = state;
+      let tempProducts = [...filteredProducts];
+
+      if (sort === "گران‌ترین‌محصول") {
+        tempProducts = tempProducts.sort((a, b) => b.price - a.price);
+        // console.log("گران ترین", tempProducts);
+      }
+      if (sort === "ارزان‌ترین‌محصول") {
+        tempProducts = tempProducts.sort((a, b) => a.price - b.price);
+        // console.log("ارزان ترین", tempProducts);
+      }
+
+      return { ...state, filteredProducts: tempProducts };
+    }
 
     case "CLEAR_FILTERS":
       return {
@@ -67,6 +88,9 @@ const filter_reducer = (state, action) => {
           price: state.filters.maxPrice,
         },
       };
+
+    case "CLEAR_SORT":
+      return { ...state, sort: "مرتب‌سازی", filters: { ...state.filters } };
 
     default:
       throw new Error(`No Matching "${action.type}" - action type`);
