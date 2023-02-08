@@ -6,7 +6,7 @@ import { Home, Category, Cart, Favorites, SingleProduct, Error } from "./pages";
 
 const App = () => {
   return (
-    <Router className="max-w-screen-xl font-iranyekan ">
+    <Router className="max-w-screen-xl font-iranyekan">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

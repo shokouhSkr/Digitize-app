@@ -24,6 +24,7 @@ import CartItems from "./CartItems";
 import SingleCartItem from "./SingleCartItem";
 import ShoppingButtons from "./ShoppingButtons";
 import Loading from "./Loading.js";
+import SingleProduct from "./SingleProduct";
 
 export {
   Header,
@@ -52,4 +53,5 @@ export {
   SingleCartItem,
   ShoppingButtons,
   Loading,
+  SingleProduct,
 };

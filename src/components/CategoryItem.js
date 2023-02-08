@@ -1,9 +1,12 @@
 import React from "react";
 
+import { useFilterContext } from "../store/context/filter_context";
 import { getLogoCompany } from "../utils/helpers";
 import { Link } from "react-router-dom";
 
 const CategoryItem = ({ logo, title, companies }) => {
+  const { updateCategory } = useFilterContext();
+
   return (
     <div className="flex items-end gap-2 text-slate-700">
       <div className="flex h-56 w-[146px] min-w-[146px] max-w-[146px] flex-col items-center justify-between overflow-hidden rounded-[10px] bg-gray-200">
@@ -13,7 +16,13 @@ const CategoryItem = ({ logo, title, companies }) => {
         </div>
       </div>
       <div className="flex h-56 flex-col justify-between overflow-hidden">
-        <Link className="self-end text-sm text-red-400 md:text-base">مشاهده همه</Link>
+        <Link
+          to="/"
+          onClick={updateCategory}
+          className="self-end text-sm text-red-400 md:text-base"
+        >
+          مشاهده همه
+        </Link>
 
         <div className="flex gap-2 overflow-auto">
           {companies.map((company, index) => (

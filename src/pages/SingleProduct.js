@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 
 import { useProductsContext } from "../store/context/products_context";
 import { useParams } from "react-router-dom";
@@ -17,7 +17,10 @@ const SingleProduct = () => {
   const { products } = useProductsContext();
 
   const { id } = useParams();
-  const product = products.find((product) => product.id === id);
+  const product = products.find((p) => p.id === id);
+
+  const [mainColor, setMainColor] = useState(product.colors.at(-1));
+  const [amount, setAmount] = useState(1);
 
   return (
     <main className="md:mt-[92px]">
@@ -45,7 +48,14 @@ const SingleProduct = () => {
                   انتخاب رنگ:
                 </span>
                 <div>
-                  <ProductColors colors={product.colors} width="w-7" height="h-7" singleProduct />
+                  <ProductColors
+                    colors={product.colors}
+                    width="w-7"
+                    height="h-7"
+                    singleProduct
+                    mainColor={mainColor}
+                    setMainColor={setMainColor}
+                  />
                 </div>
               </div>
             </section>
@@ -54,7 +64,12 @@ const SingleProduct = () => {
             <ProductFeatures />
           </div>
 
-          <AddToCart price={formatPrice(product.price)} />
+          <AddToCart
+            price={formatPrice(product.price)}
+            {...product}
+            color={mainColor}
+            amount={amount}
+          />
         </div>
       </section>
     </main>

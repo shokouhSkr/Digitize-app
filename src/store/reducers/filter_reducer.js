@@ -12,6 +12,10 @@ const filter_reducer = (state, action) => {
         filters: { ...state.filters, maxPrice: maxPrice, price: maxPrice },
       };
 
+    case "FAV_PRODUCTS": {
+      return { ...state, favoriteProducts: action.payload };
+    }
+
     case "UPDATE_COMPANIES":
       return { ...state, filters: { ...state.filters, companies: action.payload } };
 
@@ -34,7 +38,7 @@ const filter_reducer = (state, action) => {
       const { text, price, category, companies, colors } = state.filters;
 
       if (text) {
-        tempProducts = tempProducts.filter((product) => product.title.startsWith(text));
+        tempProducts = tempProducts.filter((product) => product.title.toLowerCase().includes(text));
       }
       if (category) {
         tempProducts = tempProducts.filter((product) => product.category === category);

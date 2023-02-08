@@ -6,6 +6,7 @@ import reducer from "../reducers/filter_reducer.js";
 const initialState = {
   allProducts: [],
   filteredProducts: [],
+  favoriteProducts: [],
   sort: "مرتب‌سازی",
   filters: {
     companies: [],
@@ -37,6 +38,20 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "SORT_PRODUCTS" });
   }, [products, state.filters, state.sort]);
 
+  const updateFavorites = (id) => {
+    const favList = [...state.favoriteProducts];
+    const favItem = state.allProducts.find((item) => item.id === id);
+
+    if (!favList.includes(favItem)) {
+      favList.push(favItem);
+    } else {
+      const index = favList.indexOf(favItem);
+      favList.splice(index, 1);
+    }
+
+    dispatch({ type: "FAV_PRODUCTS", payload: favList });
+  };
+
   const updateCompanies = (title) => {
     const currentIndex = state.filters.companies.indexOf(title);
     const newChecked = [...state.filters.companies];
@@ -64,6 +79,7 @@ const FilterProvider = ({ children }) => {
 
   const updateCategory = (e) => {
     const value = e.target.textContent;
+
     dispatch({ type: "UPDATE_CATEGORY", payload: value });
   };
 
@@ -92,6 +108,7 @@ const FilterProvider = ({ children }) => {
     <FilterContext.Provider
       value={{
         ...state,
+        updateFavorites,
         updateCompanies,
         updateSearch,
         updateColors,

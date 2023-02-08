@@ -7,8 +7,6 @@ import { products_url as url } from "../../utils/constants.js";
 const initialState = {
   isFilterModalOpen: false,
   isSortModalOpen: false,
-  isLiked: false,
-  likedProducts: [],
   isLoading: false,
   error: false,
   products: [],
@@ -39,7 +37,7 @@ const ProductsProvider = ({ children }) => {
           company: data.company,
         });
       }
-      console.log(loadedProducts);
+      // console.log(loadedProducts);
 
       dispatch({ type: "GET_PRODUCTS_SUCCESS", payload: loadedProducts }); // for fetching successful
     } catch (error) {
@@ -65,10 +63,6 @@ const ProductsProvider = ({ children }) => {
     dispatch({ type: "CLOSE_SORT_MODAL" });
   };
 
-  const likeProductHandler = (id) => {
-    dispatch({ type: "LIKE_PRODUCT", payload: id });
-  };
-
   return (
     <ProductsContext.Provider
       value={{
@@ -76,7 +70,6 @@ const ProductsProvider = ({ children }) => {
         openFilterModal,
         openSortModal,
         closeModal,
-        likeProductHandler,
       }}
     >
       {children}

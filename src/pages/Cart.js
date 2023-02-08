@@ -1,9 +1,10 @@
 import React from "react";
 
+import { useCartContext } from "../store/context/cart_context";
 import { PageHero, CartItems, Checkout } from "../components";
 
 const Cart = () => {
-  const cart = ["kk"];
+  const { cart } = useCartContext();
 
   return (
     <main>
@@ -16,7 +17,7 @@ const Cart = () => {
         {cart.length > 0 && (
           <div>
             <div className="justify-between gap-[5%] md:flex">
-              <CartItems />
+              <CartItems cart={cart} />
               <Checkout />
             </div>
           </div>

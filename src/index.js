@@ -11,9 +11,9 @@ root.render(
   <React.StrictMode>
     <ProductsProvider>
       <FilterProvider>
-        {/* <CartProvider> */}
-        <App />
-        {/* </CartProvider> */}
+        <CartProvider>
+          <App />
+        </CartProvider>
       </FilterProvider>
     </ProductsProvider>
   </React.StrictMode>

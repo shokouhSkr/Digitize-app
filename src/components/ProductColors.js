@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ProductColors = ({ colors, width, height, singleProduct }) => {
-  const [mainColor, setMainColor] = useState(colors.at(-1));
-
+const ProductColors = ({ colors, width, height, singleProduct, mainColor, setMainColor }) => {
   return (
     <div className="flex items-center -space-x-1">
       {colors.map((color, index) => {

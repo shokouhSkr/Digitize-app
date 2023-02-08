@@ -1,20 +1,23 @@
 import React from "react";
 
+import { useCartContext } from "../store/context/cart_context";
 import { Link } from "react-router-dom";
 import { sellerIcon, warrantyIcon, deliveryIcon } from "../data";
 
-const AddToCart = ({ price }) => {
+const AddToCart = ({ price, id, title, image, color }) => {
+  const { addToCart } = useCartContext();
+
   return (
     <>
       {/* mobile */}
       <section className="flex items-center gap-[12%] rounded-lg bg-white px-3 py-2 md:hidden">
-        <button
-          onClick
-          type="button"
-          className="w-full rounded bg-red-400 py-3 px-2 text-sm text-white 2xs:px-6 x:text-base md:hidden"
+        <Link
+          to="/cart"
+          onClick={() => addToCart({ id, price, title, image, color })}
+          className="block w-full rounded bg-red-400 py-3 px-2 text-center text-sm text-white 2xs:px-6 x:text-base md:hidden"
         >
-          <Link to="/cart">افزودن به سبد خرید</Link>
-        </button>
+          افزودن به سبد خرید
+        </Link>
 
         <div className="flex">
           <p className="w-full font-semibold text-slate-800 x:text-lg">
@@ -54,12 +57,13 @@ const AddToCart = ({ price }) => {
             <p className="mb-2 text-2xl font-semibold text-red-400 md:text-xl lg:text-2xl">
               {price} <span className="text-base font-normal md:text-sm lg:text-base">تومان</span>
             </p>
-            <button
-              type="button"
-              className="w-full rounded bg-red-400 px-2 py-3 text-[#fdfdfd] md:text-sm lg:text-base"
+            <Link
+              to="/cart"
+              onClick={() => addToCart({ id, price, title, image, color })}
+              className="block w-full rounded bg-red-400 px-2 py-3 text-center text-[#fdfdfd] md:text-sm lg:text-base"
             >
               افزودن به سبد خرید
-            </button>
+            </Link>
           </div>
         </div>
       </div>
