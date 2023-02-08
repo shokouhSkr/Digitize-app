@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useCartContext } from "../store/context/cart_context";
+import { formatPrice } from "../utils/helpers";
 import { Link } from "react-router-dom";
 import { sellerIcon, warrantyIcon, deliveryIcon } from "../data";
 
@@ -21,7 +22,7 @@ const AddToCart = ({ price, id, title, image, color }) => {
 
         <div className="flex">
           <p className="w-full font-semibold text-slate-800 x:text-lg">
-            {price} <span className="text-sm font-normal">تومان</span>
+            {formatPrice(price)} <span className="text-sm font-normal">تومان</span>
           </p>
         </div>
       </section>
@@ -55,7 +56,8 @@ const AddToCart = ({ price, id, title, image, color }) => {
 
           <div className="text-left">
             <p className="mb-2 text-2xl font-semibold text-red-400 md:text-xl lg:text-2xl">
-              {price} <span className="text-base font-normal md:text-sm lg:text-base">تومان</span>
+              {formatPrice(price)}{" "}
+              <span className="text-base font-normal md:text-sm lg:text-base">تومان</span>
             </p>
             <Link
               to="/cart"
