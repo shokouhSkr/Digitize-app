@@ -1,8 +1,16 @@
-import React, { useReducer, useContext } from "react";
+import { stringify } from "postcss";
+import React, { useReducer, useContext, useEffect } from "react";
 import reducer from "../reducers/cart_reducer";
 
+const getLocalStorage = () => {
+  let cart = [];
+
+  if (cart) return JSON.parse(localStorage.getItem("cart"));
+  else return [];
+};
+
 const initialState = {
-  cart: [],
+  cart: getLocalStorage(),
   totalItems: 0,
   totalAmount: 0,
 };
@@ -24,6 +32,10 @@ const CartProvider = ({ children }) => {
   };
 
   const toggleAmount = (id, value) => {};
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+  }, [state.cart]);
 
   return (
     <CartContext.Provider
