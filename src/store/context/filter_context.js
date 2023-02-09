@@ -79,7 +79,6 @@ const FilterProvider = ({ children }) => {
 
   const updateCategory = (e) => {
     const value = e.target.textContent;
-
     dispatch({ type: "UPDATE_CATEGORY", payload: value });
   };
 

@@ -5,18 +5,7 @@ import { useCartContext } from "../store/context/cart_context";
 import { formatPrice } from "../utils/helpers";
 
 const SingleCartItem = ({ image, title, price, id, color, amount }) => {
-  const { removeItem } = useCartContext();
-
-  const [number, setNumber] = useState(amount);
-
-  const increaseNumber = () => {
-    setNumber((prevNumber) => prevNumber + 1);
-  };
-
-  const decreaseNumber = () => {
-    if (number === 1) return;
-    setNumber((prevNumber) => prevNumber - 1);
-  };
+  const { removeItem, toggleAmount } = useCartContext();
 
   return (
     <div className="flex justify-between border-gray-100 bg-[#fdfdfd] last:border-none md:border-b md:p-4">
@@ -46,16 +35,16 @@ const SingleCartItem = ({ image, title, price, id, color, amount }) => {
         <div className="flex items-center gap-1">
           <button
             className="grid h-5 w-5 place-content-center rounded-full bg-gray-300 pt-0.5"
-            onClick={increaseNumber}
+            onClick={() => toggleAmount(id, "inc")}
           >
             +
           </button>
           <span className="grid h-8 w-6 place-content-center rounded-sm border border-red-300 p-2">
-            {number}
+            {amount}
           </span>
           <button
             className="grid h-5 w-5 place-content-center rounded-full bg-red-200 pt-0.5 text-red-500"
-            onClick={decreaseNumber}
+            onClick={() => toggleAmount(id, "dec")}
           >
             -
           </button>

@@ -31,7 +31,9 @@ const CartProvider = ({ children }) => {
     dispatch({ type: "REMOVE_ITEM", payload: tempCart });
   };
 
-  const toggleAmount = (id, value) => {};
+  const toggleAmount = (id, value) => {
+    dispatch({ type: "TOGGLE_AMOUNT", payload: { id, value } });
+  };
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state.cart));
