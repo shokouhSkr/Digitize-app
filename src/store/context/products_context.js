@@ -35,9 +35,10 @@ const ProductsProvider = ({ children }) => {
           category: data.category,
           colors: data.colors,
           company: data.company,
+          isLiked: data.isLiked,
         });
       }
-      // console.log(loadedProducts);
+      console.log(loadedProducts);
 
       dispatch({ type: "GET_PRODUCTS_SUCCESS", payload: loadedProducts }); // for fetching successful
     } catch (error) {

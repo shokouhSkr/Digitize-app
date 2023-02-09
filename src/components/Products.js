@@ -7,6 +7,7 @@ import { useFilterContext } from "../store/context/filter_context";
 const Products = () => {
   const { error, isLoading } = useProductsContext();
   const { filteredProducts } = useFilterContext();
+  console.log(filteredProducts, "filter");
 
   if (isLoading) return <Loading />;
 
@@ -17,7 +18,7 @@ const Products = () => {
       </main>
     );
 
-  if (filteredProducts.length === 0)
+  if (!filteredProducts)
     return (
       <main className="col-span-full m-auto mt-40 md:col-start-4">
         <h1 className="text-xl text-slate-800 md:text-2xl">محصول موردنظر یافت نشد.</h1>

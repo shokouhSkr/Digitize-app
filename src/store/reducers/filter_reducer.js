@@ -12,8 +12,36 @@ const filter_reducer = (state, action) => {
         filters: { ...state.filters, maxPrice: maxPrice, price: maxPrice },
       };
 
-    case "FAV_PRODUCTS": {
-      return { ...state, favoriteProducts: action.payload };
+    case "FAV_PRODUCT": {
+      // Get the id of the product to be added/removed
+      const id = action.payload;
+
+      // Find the product in the allProducts list
+      const tempItem = state.allProducts.find((item) => item.id === id);
+
+      if (tempItem) {
+        // Check if the product is already in the favoriteProducts list
+        const alreadyLiked = state.favoriteProducts.some((item) => item.id === id);
+
+        if (alreadyLiked) {
+          // If the product is already in the list, map through the list to find the product and toggle its isLiked property
+          const tempList = state.favoriteProducts.map((item) => {
+            if (item.id === id) {
+              // Toggle the isLiked property
+              const dislikedItem = false;
+
+              return { ...item, isLiked: dislikedItem };
+            } else return { ...item };
+          });
+          // Return the updated favoriteProducts list, filtered to remove items with isLiked: false
+          return { ...state, favoriteProducts: tempList.filter((item) => item.isLiked) };
+          console.log("kk");
+        } else {
+          // If the product is not in the list, add it with isLiked: true
+          const likedItem = { ...tempItem, isLiked: true };
+          return { ...state, favoriteProducts: [likedItem, ...state.favoriteProducts] };
+        }
+      }
     }
 
     case "UPDATE_COMPANIES":

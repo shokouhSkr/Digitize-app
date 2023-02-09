@@ -6,17 +6,8 @@ import { Link } from "react-router-dom";
 import { FiHeart } from "react-icons/fi";
 import { formatPrice } from "../utils/helpers";
 
-const SingleProduct = ({ image, company, id, price, title, colors }) => {
-  const { updateFavorites, favoriteProducts } = useFilterContext();
-  const [isLiked, setIsLiked] = useState(false);
-
-  const likeHandler = (id) => {
-    const likedProduct = favoriteProducts.find((product) => product.id === id);
-    if (!favoriteProducts.includes(likedProduct)) setIsLiked(!isLiked);
-    // add liked property to each product in dispatch
-
-    updateFavorites(id);
-  };
+const SingleProduct = ({ image, company, id, price, title, colors, isLiked }) => {
+  const { updateFavorites } = useFilterContext();
 
   return (
     <div className="rounded-lg bg-white p-1.5 text-sm shadow-md">
@@ -25,7 +16,7 @@ const SingleProduct = ({ image, company, id, price, title, colors }) => {
         {/* like button */}
         <button
           className="absolute top-2 right-1 rounded-full bg-[#ebeaea] p-1.5 px-2 sm:py-2.5"
-          onClick={() => likeHandler(id)}
+          onClick={() => updateFavorites(id)}
         >
           <FiHeart
             className={`w-3 sm:w-5 ${

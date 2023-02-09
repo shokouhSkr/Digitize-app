@@ -3,9 +3,17 @@ import React, { useReducer, useContext, useEffect } from "react";
 import { useProductsContext } from "./products_context.js";
 import reducer from "../reducers/filter_reducer.js";
 
+const getLocalStorage = () => {
+  let favorites = localStorage.getItem("favorites");
+
+  if (favorites) return JSON.parse(localStorage.getItem("favorites"));
+  else return [];
+};
+
 const initialState = {
   allProducts: [],
   filteredProducts: [],
+  // favoriteProducts: getLocalStorage(),
   favoriteProducts: [],
   sort: "مرتب‌سازی",
   filters: {
@@ -38,18 +46,12 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "SORT_PRODUCTS" });
   }, [products, state.filters, state.sort]);
 
+  // useEffect(() => {
+  //   localStorage.setItem("favorites", JSON.stringify(state.favoriteProducts));
+  // }, [state.favoriteProducts]);
+
   const updateFavorites = (id) => {
-    const favList = [...state.favoriteProducts];
-    const favItem = state.allProducts.find((item) => item.id === id);
-
-    if (!favList.includes(favItem)) {
-      favList.push(favItem);
-    } else {
-      const index = favList.indexOf(favItem);
-      favList.splice(index, 1);
-    }
-
-    dispatch({ type: "FAV_PRODUCTS", payload: favList });
+    dispatch({ type: "FAV_PRODUCT", payload: id });
   };
 
   const updateCompanies = (title) => {
