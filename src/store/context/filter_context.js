@@ -13,8 +13,7 @@ const getLocalStorage = () => {
 const initialState = {
   allProducts: [],
   filteredProducts: [],
-  // favoriteProducts: getLocalStorage(),
-  favoriteProducts: [],
+  favoriteProducts: getLocalStorage(),
   sort: "مرتب‌سازی",
   filters: {
     companies: [],
@@ -46,9 +45,9 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "SORT_PRODUCTS" });
   }, [products, state.filters, state.sort]);
 
-  // useEffect(() => {
-  //   localStorage.setItem("favorites", JSON.stringify(state.favoriteProducts));
-  // }, [state.favoriteProducts]);
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(state.favoriteProducts));
+  }, [state.favoriteProducts]);
 
   const updateFavorites = (id) => {
     dispatch({ type: "FAV_PRODUCT", payload: id });
