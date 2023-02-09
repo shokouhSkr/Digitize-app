@@ -15,14 +15,14 @@ const Checkout = () => {
           <p className="text-base font-medium md:text-sm">مجموع قیمت:</p>
           <p className="text-lg text-red-600 md:text-base">{formatPrice(totalAmount)} تومان</p>
         </div>
-        <button type="button" className="text-[13px] text-slate-800 md:hidden">
+        <button type="button" className="text-sm font-normal text-slate-800 md:hidden">
           کد تخفیف دارید؟
         </button>
 
         {/* laptop */}
         <div className="mb-10 hidden md:block">
           <div className="mb-6 flex items-center justify-between">
-            <p className="text-sm font-light">کد تخفیف:</p>
+            <p className="text-sm font-normal text-slate-800">کد تخفیف:</p>
 
             <form className="flex rounded-md">
               <input
@@ -41,12 +41,12 @@ const Checkout = () => {
 
           <div className="mb-12 flex justify-between font-medium">
             <p>تخفیف:</p>
-            <p className="text-slate-800">120,000 تومان</p>
+            <p className="text-slate-800">0 تومان</p>
           </div>
         </div>
         <div className="hidden justify-between font-medium md:flex">
           <p>قیمت نهایی:</p>
-          <p className="text-red-600">{formatPrice(totalAmount - 120000)} تومان</p>
+          <p className="text-red-600">{formatPrice(totalAmount)} تومان</p>
         </div>
       </div>
 
