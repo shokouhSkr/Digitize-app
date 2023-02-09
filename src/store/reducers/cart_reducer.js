@@ -16,7 +16,7 @@ const cart_reducer = (state, action) => {
         return { ...state, cart: tempCart };
       } else {
         const newItem = { id: id + color, amount: 1, title, price, image, color };
-        return { ...state, cart: [...state.cart, newItem] };
+        return { ...state, cart: [newItem, ...state.cart] };
       }
     }
 
@@ -41,9 +41,23 @@ const cart_reducer = (state, action) => {
             return { ...item, amount: newAmount };
           }
         }
+        return item;
       });
 
       return { ...state, cart: tempCart };
+    }
+
+    case "COUNT_TOTAL_PRICE": {
+      let totalItems = 0;
+      let totalAmount = 0;
+      const cart = state.cart;
+
+      cart.forEach((cartItem) => {
+        totalItems += cartItem.amount;
+        totalAmount += cartItem.price * cartItem.amount;
+      });
+
+      return { ...state, totalItems, totalAmount };
     }
 
     default:

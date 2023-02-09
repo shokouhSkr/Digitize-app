@@ -21,7 +21,7 @@ const SingleCartItem = ({ image, title, price, id, color, amount }) => {
             <div className={`h-3 w-3 rounded-full ${color} 2xs:h-4 2xs:w-4`}></div>
           </div>
           {/* price */}
-          <p className="text-red-600">{formatPrice(price)} تومان</p>
+          <p className="text-red-600">{formatPrice(price * amount)} تومان</p>
         </div>
       </div>
 
