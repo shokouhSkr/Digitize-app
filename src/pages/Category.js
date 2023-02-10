@@ -2,18 +2,15 @@ import React from "react";
 
 import { PageHero, CategoryItem } from "../components";
 import { phoneCategory, laptopCategory, watchCategory } from "../assets";
-import { products } from "../data";
-import { getUniqueValues } from "../utils/helpers";
+import { getUniqueCompanies } from "../utils/helpers";
+import { useFilterContext } from "../store/context/filter_context";
 
 const Category = () => {
-  const phoneCompanies = products.filter((product) => product.category === "تلفن همراه");
-  const uniquePhoneCompanies = getUniqueValues(phoneCompanies, "company");
+  const { allProducts } = useFilterContext();
 
-  const laptopCompanies = products.filter((product) => product.category === "لپ تاپ");
-  const uniqueLaptopCompanies = getUniqueValues(laptopCompanies, "company");
-
-  const watchCompanies = products.filter((product) => product.category === "ساعت هوشمند");
-  const uniqueWatchCompanies = getUniqueValues(watchCompanies, "company");
+  const uniquePhoneCompanies = getUniqueCompanies(allProducts, "تلفن‌همراه");
+  const uniqueLaptopCompanies = getUniqueCompanies(allProducts, "لپ‌تاپ");
+  const uniqueWatchCompanies = getUniqueCompanies(allProducts, "ساعت‌هوشمند");
 
   return (
     <main className="md:mt-[92px]">

@@ -4,16 +4,16 @@ import { useProductsContext } from "./products_context.js";
 import reducer from "../reducers/filter_reducer.js";
 
 const getLocalStorage = () => {
-  let favorites = localStorage.getItem("favorites");
+  let storedList = localStorage.getItem("favorites");
 
-  if (favorites) return JSON.parse(localStorage.getItem("favorites"));
+  if (storedList) return JSON.parse(localStorage.getItem("favorites"));
   else return [];
 };
 
 const initialState = {
   allProducts: [],
   filteredProducts: [],
-  favoriteProducts: getLocalStorage(),
+  favoriteProducts: getLocalStorage("favorites"),
   sort: "مرتب‌سازی",
   filters: {
     companies: [],
@@ -53,6 +53,7 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "FAV_PRODUCT", payload: id });
   };
 
+  // checkboxes
   const updateCompanies = (title) => {
     const currentIndex = state.filters.companies.indexOf(title);
     const newChecked = [...state.filters.companies];
@@ -78,9 +79,8 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "UPDATE_SEARCH", payload: value });
   };
 
-  const updateCategory = (e) => {
-    const value = e.target.textContent;
-    dispatch({ type: "UPDATE_CATEGORY", payload: value });
+  const updateCategory = (title) => {
+    dispatch({ type: "UPDATE_CATEGORY", payload: title });
   };
 
   const updatePrice = (e) => {

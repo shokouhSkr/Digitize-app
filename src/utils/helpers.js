@@ -25,6 +25,12 @@ export const getUniqueValues = (data, type) => {
   return [...new Set(unique)];
 };
 
+export const getUniqueCompanies = (allProducts, category) => {
+  const productsByCategory = allProducts.filter((product) => product.category === category);
+  const uniqueCompanies = getUniqueValues(productsByCategory, "company");
+  return uniqueCompanies;
+};
+
 export const getLogoCompany = (company) => {
   switch (company) {
     case "سامسونگ":
@@ -54,9 +60,6 @@ export const getColorNames = (title) => {
 
     case "bg-yellow-400":
       return "زرد";
-
-    case "bg-purple-400":
-      return "بنفش";
 
     case "bg-gray-400":
       return "مشکی";

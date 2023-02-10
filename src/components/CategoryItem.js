@@ -5,7 +5,7 @@ import { getLogoCompany } from "../utils/helpers";
 import { Link } from "react-router-dom";
 
 const CategoryItem = ({ logo, title, companies }) => {
-  const { updateCategory } = useFilterContext();
+  const { updateCategory, updateCompanies } = useFilterContext();
 
   return (
     <div className="flex items-end gap-2 text-slate-700">
@@ -18,7 +18,7 @@ const CategoryItem = ({ logo, title, companies }) => {
       <div className="flex h-56 flex-col justify-between overflow-hidden">
         <Link
           to="/"
-          onClick={updateCategory}
+          onClick={() => updateCategory(title)}
           className="self-end text-sm text-red-400 md:text-base"
         >
           مشاهده همه
@@ -27,6 +27,7 @@ const CategoryItem = ({ logo, title, companies }) => {
         <div className="flex gap-2 overflow-auto">
           {companies.map((company, index) => (
             <div
+              onClick={() => updateCompanies(company)}
               key={index}
               className="mb-3 flex h-40 flex-col items-center justify-between rounded-[10px] bg-white px-8 py-5 shadow-md"
             >

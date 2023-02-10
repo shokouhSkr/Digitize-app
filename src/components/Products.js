@@ -7,7 +7,6 @@ import { useFilterContext } from "../store/context/filter_context";
 const Products = () => {
   const { error, isLoading } = useProductsContext();
   const { filteredProducts } = useFilterContext();
-  console.log(filteredProducts, "filter");
 
   if (isLoading) return <Loading />;
 

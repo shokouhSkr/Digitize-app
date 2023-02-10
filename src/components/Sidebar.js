@@ -23,7 +23,7 @@ const Sidebar = () => {
                   key={id}
                   type="button"
                   name="category"
-                  onClick={updateCategory}
+                  onClick={() => updateCategory(title)}
                   className="mb-4 flex items-end text-gray-400 focus:text-slate-800"
                 >
                   <img src={icon} alt={title} className="ml-2" />

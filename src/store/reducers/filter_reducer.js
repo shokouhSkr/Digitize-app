@@ -13,36 +13,67 @@ const filter_reducer = (state, action) => {
       };
 
     case "FAV_PRODUCT": {
-      // Get the id of the product to be added/removed
       const id = action.payload;
-
-      // Find the product in the allProducts list
       const tempItem = state.allProducts.find((item) => item.id === id);
 
       if (tempItem) {
-        // Check if the product is already in the favoriteProducts list
         const alreadyLiked = state.favoriteProducts.some((item) => item.id === id);
 
         if (alreadyLiked) {
-          // If the product is already in the list, map through the list to find the product and toggle its isLiked property
           const tempList = state.favoriteProducts.map((item) => {
             if (item.id === id) {
-              // Toggle the isLiked property
               const dislikedItem = false;
 
               return { ...item, isLiked: dislikedItem };
             } else return { ...item };
           });
-          // Return the updated favoriteProducts list, filtered to remove items with isLiked: false
           return { ...state, favoriteProducts: tempList.filter((item) => item.isLiked) };
-          console.log("kk");
         } else {
-          // If the product is not in the list, add it with isLiked: true
           const likedItem = { ...tempItem, isLiked: true };
-          return { ...state, favoriteProducts: [likedItem, ...state.favoriteProducts] };
+          // find the item that matchs in filteredProdcut and replace it:
+
+          return {
+            ...state,
+            favoriteProducts: [likedItem, ...state.favoriteProducts],
+          };
         }
       }
     }
+
+    // case "FAV_PRODUCT": {
+    //   const id = action.payload;
+    //   const tempItem = state.allProducts.find((item) => item.id === id);
+
+    //   if (tempItem) {
+    //     const alreadyLiked = state.favoriteProducts.some((item) => item.id === id);
+
+    //     if (alreadyLiked) {
+    //       const tempList = state.favoriteProducts.map((item) => {
+    //         if (item.id === id) {
+    //           const dislikedItem = false;
+
+    //           return { ...item, isLiked: dislikedItem };
+    //         } else return { ...item };
+    //       });
+    //       return { ...state, favoriteProducts: tempList.filter((item) => item.isLiked) };
+    //     } else {
+    //       const likedItem = { ...tempItem, isLiked: true };
+
+    //       // find the item that matchs in filteredProdcut and replace it:
+    //       const tempFilteredList = state.filteredProducts.map((item) => {
+    //         if (item.id === id && item.isLiked === true) {
+    //           return { ...tempItem, isLiked: false };
+    //         } else return item;
+    //       });
+
+    //       return {
+    //         ...state,
+    //         favoriteProducts: [likedItem, ...state.favoriteProducts],
+    //         filteredProducts: tempFilteredList,
+    //       };
+    //     }
+    //   }
+    // }
 
     case "UPDATE_COMPANIES":
       return { ...state, filters: { ...state.filters, companies: action.payload } };
@@ -60,10 +91,10 @@ const filter_reducer = (state, action) => {
       return { ...state, filters: { ...state.filters, price: action.payload } };
 
     case "FILTER_PRODUCTS": {
-      // always do this for filtering. we need a copy of "all products"
+      // for filtering we always need a copy of "all products"
       let tempProducts = [...state.allProducts];
 
-      const { text, price, category, companies, colors } = state.filters;
+      const { text, price, category, companies, singleCompany, colors } = state.filters;
 
       if (text) {
         tempProducts = tempProducts.filter((product) => product.title.toLowerCase().includes(text));
@@ -74,6 +105,7 @@ const filter_reducer = (state, action) => {
       if (price) {
         tempProducts = tempProducts.filter((product) => product.price <= price);
       }
+
       if (companies.length > 0) {
         tempProducts = tempProducts.filter((product) =>
           companies.some((company) => [product.company].includes(company))

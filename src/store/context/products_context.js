@@ -46,7 +46,6 @@ const ProductsProvider = ({ children }) => {
     }
   };
 
-  // const id = document.location.pathname.slice(9);
   useEffect(() => {
     fetchProducts(url);
   }, []);

@@ -22,7 +22,7 @@ const Header = () => {
           {categories.map((category) => {
             const { id, title } = category;
             return (
-              <button key={id} onClick={updateCategory}>
+              <button key={id} onClick={() => updateCategory(title)}>
                 {title}
               </button>
             );
