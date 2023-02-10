@@ -40,41 +40,6 @@ const filter_reducer = (state, action) => {
       }
     }
 
-    // case "FAV_PRODUCT": {
-    //   const id = action.payload;
-    //   const tempItem = state.allProducts.find((item) => item.id === id);
-
-    //   if (tempItem) {
-    //     const alreadyLiked = state.favoriteProducts.some((item) => item.id === id);
-
-    //     if (alreadyLiked) {
-    //       const tempList = state.favoriteProducts.map((item) => {
-    //         if (item.id === id) {
-    //           const dislikedItem = false;
-
-    //           return { ...item, isLiked: dislikedItem };
-    //         } else return { ...item };
-    //       });
-    //       return { ...state, favoriteProducts: tempList.filter((item) => item.isLiked) };
-    //     } else {
-    //       const likedItem = { ...tempItem, isLiked: true };
-
-    //       // find the item that matchs in filteredProdcut and replace it:
-    //       const tempFilteredList = state.filteredProducts.map((item) => {
-    //         if (item.id === id && item.isLiked === true) {
-    //           return { ...tempItem, isLiked: false };
-    //         } else return item;
-    //       });
-
-    //       return {
-    //         ...state,
-    //         favoriteProducts: [likedItem, ...state.favoriteProducts],
-    //         filteredProducts: tempFilteredList,
-    //       };
-    //     }
-    //   }
-    // }
-
     case "UPDATE_COMPANIES":
       return { ...state, filters: { ...state.filters, companies: action.payload } };
 

@@ -7,7 +7,6 @@ import { Search } from "../components";
 import { logoDesk } from "../assets";
 
 const Header = () => {
-  // products => filtered_products
   const { updateCategory, clearFilters } = useFilterContext();
 
   return (

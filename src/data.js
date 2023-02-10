@@ -347,7 +347,7 @@ export const products = [
     category: "تلفن همراه",
   },
   {
-    id: "recoM2MyHJGHLVi5l",
+    id: "zecoM2MyHJGHLVi5l",
     title: "مک بوک Apple MKGR3 1TB",
     price: 72500000,
     image: `https://storage.torob.com/backend-api/base/images/fS/Og/fSOgIywBaXrt7IpU.jpeg_/216x216.jpg`,
