@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 
 import { useCartContext } from "../store/context/cart_context";
-import { useFilterContext } from "../store/context/filter_context";
 import { Link } from "react-router-dom";
 import { links } from "../data";
 import { map, logoDesk, line, phone } from "../assets";
 
 const Footer = () => {
-  const { clearFilters } = useFilterContext();
   const { totalItems } = useCartContext();
   const [active, setActive] = useState(links[0]);
 
   const linkHandler = (id) => {
-    if (id === 1) clearFilters();
-
     const selectedLink = links.find((link) => link.id === id);
     setActive(selectedLink);
   };

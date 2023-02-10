@@ -3,16 +3,15 @@ import React, { useReducer, useContext, useEffect } from "react";
 import { useProductsContext } from "./products_context.js";
 import reducer from "../reducers/filter_reducer.js";
 
-const getLocalStorage = () => {
-  let storedList = localStorage.getItem("favorites");
-
-  if (storedList) return JSON.parse(localStorage.getItem("favorites"));
+const getLocalStorage = (key) => {
+  let storedList = localStorage.getItem(key);
+  if (storedList) return JSON.parse(localStorage.getItem(key));
   else return [];
 };
 
 const initialState = {
   allProducts: [],
-  filteredProducts: [],
+  filteredProducts: getLocalStorage("filteredProducts"),
   favoriteProducts: getLocalStorage("favorites"),
   sort: "مرتب‌سازی",
   filters: {
@@ -44,6 +43,10 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "FILTER_PRODUCTS" });
     dispatch({ type: "SORT_PRODUCTS" });
   }, [products, state.filters, state.sort]);
+
+  useEffect(() => {
+    localStorage.setItem("filteredProducts", JSON.stringify(state.filteredProducts));
+  }, [state.filteredProducts]);
 
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(state.favoriteProducts));

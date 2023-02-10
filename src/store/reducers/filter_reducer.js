@@ -27,14 +27,22 @@ const filter_reducer = (state, action) => {
               return { ...item, isLiked: dislikedItem };
             } else return { ...item };
           });
-          return { ...state, favoriteProducts: tempList.filter((item) => item.isLiked) };
-        } else {
-          const likedItem = { ...tempItem, isLiked: true };
-          // find the item that matchs in filteredProdcut and replace it:
 
           return {
             ...state,
+            favoriteProducts: tempList.filter((item) => item.isLiked),
+            filteredProducts: state.filteredProducts.map((item) =>
+              item.id === id ? { ...item, isLiked: false } : item
+            ),
+          };
+        } else {
+          const likedItem = { ...tempItem, isLiked: true };
+          return {
+            ...state,
             favoriteProducts: [likedItem, ...state.favoriteProducts],
+            filteredProducts: state.filteredProducts.map((item) =>
+              item.id === id ? { ...item, isLiked: true } : item
+            ),
           };
         }
       }
@@ -95,11 +103,9 @@ const filter_reducer = (state, action) => {
 
       if (sort === "گران‌ترین‌محصول") {
         tempProducts = tempProducts.sort((a, b) => b.price - a.price);
-        // console.log("گران ترین", tempProducts);
       }
       if (sort === "ارزان‌ترین‌محصول") {
         tempProducts = tempProducts.sort((a, b) => a.price - b.price);
-        // console.log("ارزان ترین", tempProducts);
       }
 
       return { ...state, filteredProducts: tempProducts };

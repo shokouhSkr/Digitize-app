@@ -7,7 +7,7 @@ const CartItems = ({ cart }) => {
   return (
     <section className="mb-8 h-2/3 rounded-md md:basis-3/5">
       {/* mobile */}
-      <div className="mb-20 h-56 overflow-scroll md:hidden">
+      <div className="mb-20 h-60 overflow-scroll md:hidden">
         {cart.map((item) => (
           <div
             key={item.id}
