@@ -338,7 +338,7 @@ export const products = [
     category: "تلفن همراه",
   },
   {
-    id: "eecd1jIVIEChmiwhe",
+    id: "zzzcd1jIVIEChmiwhe",
     title: "گوشی آیفون 12 پرومکس",
     price: 27500000,
     image: `https://storage.torob.com/backend-api/base/images/j0/9V/j09VTeEJ0OFWxrAO.png_/216x216.jpg`,

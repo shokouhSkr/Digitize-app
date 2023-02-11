@@ -40,17 +40,14 @@ const FilterProvider = ({ children }) => {
 
   /////////////////////////////////
   useEffect(() => {
+    localStorage.setItem("filteredProducts", JSON.stringify(state.filteredProducts));
+    localStorage.setItem("favorites", JSON.stringify(state.favoriteProducts));
+  }, [state.filteredProducts, state.favoriteProducts]);
+
+  useEffect(() => {
     dispatch({ type: "FILTER_PRODUCTS" });
     dispatch({ type: "SORT_PRODUCTS" });
   }, [products, state.filters, state.sort]);
-
-  useEffect(() => {
-    localStorage.setItem("filteredProducts", JSON.stringify(state.filteredProducts));
-  }, [state.filteredProducts]);
-
-  useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(state.favoriteProducts));
-  }, [state.favoriteProducts]);
 
   const updateFavorites = (id) => {
     dispatch({ type: "FAV_PRODUCT", payload: id });
