@@ -17,17 +17,21 @@ const filter_reducer = (state, action) => {
       const tempItem = state.allProducts.find((item) => item.id === id);
 
       if (tempItem) {
+        // Check if the product is already in the favoriteProducts
         const alreadyLiked = state.favoriteProducts.some((item) => item.id === id);
 
+        // If the product is already in the favoriteProducts state, unlike it
         if (alreadyLiked) {
+          // Create a new array for favoriteProducts that doesn't include the disliked item
           const tempList = state.favoriteProducts.map((item) => {
             if (item.id === id) {
               const dislikedItem = false;
-
+              // Set the isLiked property to false for the disliked item.
               return { ...item, isLiked: dislikedItem };
             } else return { ...item };
           });
 
+          // Return the updated state with the new favoriteProducts array and updated filteredProducts array
           return {
             ...state,
             favoriteProducts: tempList.filter((item) => item.isLiked),
@@ -36,7 +40,9 @@ const filter_reducer = (state, action) => {
             ),
           };
         } else {
+          // If the product is not already in the favoriteProducts state, like it
           const likedItem = { ...tempItem, isLiked: true };
+          // Return the updated state with the new favoriteProducts array and updated filteredProducts array.
           return {
             ...state,
             favoriteProducts: [likedItem, ...state.favoriteProducts],
