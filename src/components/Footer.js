@@ -25,7 +25,9 @@ const Footer = () => {
             <li key={id} className="list-none">
               <Link to={url} onClick={() => linkHandler(id)}>
                 <div className="relative flex items-center">
-                  <img src={icon} alt={title} />
+                  <span className={`${active.id === id ? "fill-slate-800" : "fill-[#afafaf]"}`}>
+                    {React.cloneElement(icon)}
+                  </span>
                   {id === 3 && totalItems > 0 && (
                     <div className="absolute -top-1 right-5 flex items-center justify-center rounded-full bg-red-400 px-2 py-0.5 text-xs">
                       <span className="inline-block pt-0.5 text-center">{totalItems}</span>
