@@ -3,7 +3,9 @@ import React from "react";
 import { useFilterContext } from "../store/context/filter_context";
 import { Link } from "react-router-dom";
 import { categories } from "../data";
-import { Search } from "../components";
+import { Search, Badge } from "../components";
+import { CgShoppingBag } from "react-icons/cg";
+import { BsHeartFill } from "react-icons/bs";
 import { logoDesk } from "../assets";
 
 const Header = () => {
@@ -28,7 +30,22 @@ const Header = () => {
           })}
         </ul>
 
-        <Search />
+        <div className="flex w-full items-center justify-end gap-8">
+          {/* cart and favorite icons */}
+          <div className="flex gap-5">
+            <Link to="/favorites">
+              <BsHeartFill className="text-2xl font-bold text-slate-700" />
+            </Link>
+            <Link to="/cart">
+              <span className="relative">
+                <CgShoppingBag className="text-2xl text-slate-700" />
+                <Badge />
+              </span>
+            </Link>
+          </div>
+
+          <Search />
+        </div>
       </section>
     </header>
   );

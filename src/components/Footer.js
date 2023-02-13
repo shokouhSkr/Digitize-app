@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { Badge } from "../components";
 import { useCartContext } from "../store/context/cart_context";
 import { Link } from "react-router-dom";
 import { links } from "../data";
@@ -28,11 +29,7 @@ const Footer = () => {
                   <span className={`${active.id === id ? "fill-slate-800" : "fill-[#afafaf]"}`}>
                     {React.cloneElement(icon)}
                   </span>
-                  {id === 3 && totalItems > 0 && (
-                    <div className="absolute -top-1 right-5 flex items-center justify-center rounded-full bg-red-400 px-2 py-0.5 text-xs">
-                      <span className="inline-block pt-0.5 text-center">{totalItems}</span>
-                    </div>
-                  )}
+                  {id === 3 && totalItems > 0 && <Badge />}
                   <p
                     className={`mr-2 text-sm font-bold text-slate-800 ${
                       active.id === id ? "block" : "hidden"

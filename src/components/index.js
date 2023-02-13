@@ -25,6 +25,7 @@ import SingleCartItem from "./SingleCartItem";
 import ShoppingButtons from "./ShoppingButtons";
 import Loading from "./Loading.js";
 import SingleProduct from "./SingleProduct";
+import Badge from "./Badge";
 
 export {
   Header,
@@ -49,6 +50,7 @@ export {
   AddToCart,
   CategoryItem,
   Checkout,
+  Badge,
   CartItems,
   SingleCartItem,
   ShoppingButtons,

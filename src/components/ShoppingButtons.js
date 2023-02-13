@@ -5,7 +5,7 @@ const ShoppingButtons = () => {
     <div className="mb-20">
       <button
         type="button"
-        className="fixed bottom-20 left-4 right-4 mb-3 block rounded bg-red-400 p-3.5 text-center text-white md:static md:w-full"
+        className="mb-3 block w-full rounded bg-red-400 p-3.5 text-center text-white md:static md:w-full"
       >
         ادامه فرایند خرید
       </button>

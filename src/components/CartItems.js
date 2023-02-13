@@ -7,7 +7,7 @@ const CartItems = ({ cart }) => {
   return (
     <section className="mb-8 h-2/3 rounded-md md:basis-3/5">
       {/* mobile */}
-      <div className="mb-20 h-60 overflow-scroll md:hidden">
+      <div className="md:hidden">
         {cart.map((item) => (
           <div
             key={item.id}
@@ -27,7 +27,7 @@ const CartItems = ({ cart }) => {
           بازگشت به خانه
         </Link>
       </div>
-      <div className="hidden max-h-[600px] flex-col overflow-scroll rounded-md bg-[#fdfdfd] p-3 text-sm md:flex">
+      <div className="hidden flex-col rounded-md bg-[#fdfdfd] p-3 text-sm md:flex">
         {cart.map((item) => (
           <SingleCartItem key={item.id} {...item} />
         ))}

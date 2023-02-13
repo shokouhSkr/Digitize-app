@@ -19,7 +19,7 @@ const Search = () => {
       {/* pc */}
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="hidden w-2/5 rounded-[4px] bg-stone-100 md:flex"
+        className="hidden w-1/2 rounded-[4px] bg-stone-100 md:flex"
       >
         <img src={searchIcon} alt="search" class="p-3" />
         <input

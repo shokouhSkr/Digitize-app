@@ -17,7 +17,7 @@ const Products = () => {
       </main>
     );
 
-  if (!filteredProducts)
+  if (filteredProducts.length === 0)
     return (
       <main className="col-span-full m-auto mt-40 md:col-start-4">
         <h1 className="text-xl text-slate-800 md:text-2xl">محصول موردنظر یافت نشد.</h1>
