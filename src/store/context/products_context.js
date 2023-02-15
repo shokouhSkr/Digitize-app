@@ -7,9 +7,16 @@ import { products_url as url } from "../../utils/constants.js";
 const initialState = {
   isFilterModalOpen: false,
   isSortModalOpen: false,
-  isLoading: false,
-  error: false,
+
+  // products
+  isProductsLoading: false,
+  productsError: false,
   products: [],
+
+  // single product
+  isSingleProductLoading: false,
+  singleProductError: false,
+  singleProduct: {},
 };
 
 const ProductsContext = React.createContext();
@@ -38,11 +45,23 @@ const ProductsProvider = ({ children }) => {
           isLiked: data.isLiked,
         });
       }
-      console.log(loadedProducts);
+      console.log("loadedProducts", loadedProducts);
 
       dispatch({ type: "GET_PRODUCTS_SUCCESS", payload: loadedProducts }); // for fetching successful
     } catch (error) {
       dispatch({ type: "GET_PRODUCTS_ERROR" }); // for fetching failed
+    }
+  };
+
+  const fetchSingleProduct = async (id) => {
+    try {
+      const singleData = await axios.get(
+        `https://digitize-app-7f39c-default-rtdb.firebaseio.com/products/${id}.json`
+      );
+
+      dispatch({ type: "GET_SINGLE_PRODUCT_SUCCESS", payload: singleData.data });
+    } catch (error) {
+      dispatch({ type: "GET_SINGLE_PRODUCT_ERROR" });
     }
   };
 
@@ -70,6 +89,7 @@ const ProductsProvider = ({ children }) => {
         openFilterModal,
         openSortModal,
         closeModal,
+        fetchSingleProduct,
       }}
     >
       {children}

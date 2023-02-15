@@ -13,19 +13,25 @@ const products_reducer = (state, action) => {
       return { ...state, isSortModalOpen: false };
 
     case "GET_PRODUCTS_BEGIN":
-      return { ...state, isLoading: true };
+      return { ...state, isProductsLoading: true };
 
     case "GET_PRODUCTS_SUCCESS":
-      return { ...state, isLoading: false, products: action.payload };
+      return { ...state, isProductsLoading: false, products: action.payload };
 
     case "GET_PRODUCTS_ERROR":
-      return { ...state, isLoading: false, error: true };
+      return { ...state, isProductsLoading: false, productsError: true };
+
+    case "GET_SINGLE_PRODUCT_BEGIN":
+      return { ...state, isSingleProductLoading: true, isSingleProductError: false };
+
+    case "GET_SINGLE_PRODUCT_SUCCESS":
+      return { ...state, isSingleProductLoading: false, singleProduct: action.payload };
+
+    case "GET_SINGLE_PRODUCT_ERROR":
+      return { ...state, isSingleProductLoading: false, isSingleProductError: true };
 
     case "LIKE_PRODUCT":
       const { isLiked } = state;
-      // const tempLiked = products;
-
-      // return { ...state, isLiked: !isLiked, likedProducts: tempLiked };
       return { ...state, isLiked: !isLiked };
 
     default:

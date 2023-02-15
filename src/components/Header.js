@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useFilterContext } from "../store/context/filter_context";
+import { useCartContext } from "../store/context/cart_context";
 import { Link } from "react-router-dom";
 import { categories } from "../data";
 import { Search, Badge } from "../components";
 import { CgShoppingBag } from "react-icons/cg";
-import { BsHeartFill } from "react-icons/bs";
+import { FiHeart } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
 import { logoDesk } from "../assets";
 
 const Header = () => {
-  const { updateCategory, clearFilters } = useFilterContext();
+  const { updateCategory, clearFilters, favoriteProducts } = useFilterContext();
+  const { totalItems } = useCartContext();
 
   return (
     <header className="fixed left-0 top-0 right-0 z-50 hidden bg-[#fdfdfd] px-[3%] py-6 text-sm font-bold text-slate-800 shadow-md md:block">
-      <section className="flex items-center justify-between">
+      <nav className="flex items-center justify-between">
         <ul className="flex items-center justify-between gap-4 lg:gap-6 lg:text-base xl:gap-7 xl:text-lg">
           <img src={logoDesk} alt="Digitize" className="w-20" />
 
@@ -21,32 +24,33 @@ const Header = () => {
             خانه
           </Link>
           {categories.map((category) => {
-            const { id, title } = category;
+            const { id, title, enTitle } = category;
             return (
-              <button key={id} onClick={() => updateCategory(title)}>
+              <Link to="/" key={id} onClick={() => updateCategory(title)}>
                 {title}
-              </button>
+              </Link>
             );
           })}
         </ul>
 
-        <div className="flex w-full items-center justify-end gap-8">
+        <div className="flex flex-1 items-center justify-end gap-8">
           {/* cart and favorite icons */}
           <div className="flex gap-5">
             <Link to="/favorites">
-              <BsHeartFill className="text-2xl font-bold text-slate-700" />
+              {favoriteProducts.length === 0 && <FiHeart className="text-2xl text-slate-700" />}
+              {favoriteProducts.length > 0 && <FaHeart className="text-2xl text-slate-700" />}
             </Link>
             <Link to="/cart">
               <span className="relative">
                 <CgShoppingBag className="text-2xl text-slate-700" />
-                <Badge />
+                {totalItems > 0 && <Badge />}
               </span>
             </Link>
           </div>
 
           <Search />
         </div>
-      </section>
+      </nav>
     </header>
   );
 };

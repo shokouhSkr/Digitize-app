@@ -291,16 +291,19 @@ export const categories = [
     id: 99887722,
     icon: `${phoneCat}`,
     title: "تلفن‌همراه",
+    enTitle: "mobiles",
   },
   {
     id: 99881122,
     icon: `${laptopCat}`,
     title: "لپ‌تاپ",
+    enTitle: "laptops",
   },
   {
     id: 77887922,
     icon: `${watchCat}`,
     title: "ساعت‌هوشمند",
+    enTitle: "smartwatchs",
   },
 ];
 

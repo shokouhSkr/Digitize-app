@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { useProductsContext } from "../store/context/products_context";
 import { useParams } from "react-router-dom";
@@ -14,9 +14,14 @@ import {
 } from "../components";
 
 const SingleProduct = () => {
-  const { products } = useProductsContext();
+  const { singleProduct, fetchSingleProduct, products } = useProductsContext();
 
   const { id } = useParams();
+  // useEffect(() => {
+  //   fetchSingleProduct(id);
+  // }, [id]);
+  // // console.log(singleProduct, "single product");
+
   const product = products.find((p) => p.id === id);
 
   const [mainColor, setMainColor] = useState(product.colors.at(-1));

@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import { links } from "../data";
 import { map, logoDesk, line, phone } from "../assets";
 
-const Footer = () => {
+const Footer = (props) => {
+  console.log(props);
   const { totalItems } = useCartContext();
   const [active, setActive] = useState(links[0]);
 
