@@ -1,5 +1,5 @@
 import React from "react";
-import { useCartContext } from "../store/context/cart_context";
+import { useCartContext } from "../../store/context/cart_context";
 
 const Badge = () => {
   const { totalItems } = useCartContext();

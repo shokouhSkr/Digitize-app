@@ -45,7 +45,7 @@ const ProductsProvider = ({ children }) => {
           isLiked: data.isLiked,
         });
       }
-      console.log("loadedProducts", loadedProducts);
+      // console.log("loadedProducts", loadedProducts);
 
       dispatch({ type: "GET_PRODUCTS_SUCCESS", payload: loadedProducts }); // for fetching successful
     } catch (error) {

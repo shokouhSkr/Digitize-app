@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useFilterContext } from "../store/context/filter_context";
-import { searchIcon } from "../assets";
+import { useFilterContext } from "../../store/context/filter_context";
+import { searchIcon } from "../../assets";
 
 const Search = () => {
   const {

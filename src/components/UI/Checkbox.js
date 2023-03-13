@@ -1,6 +1,6 @@
 import React from "react";
 
-import { getColorNames } from "../utils/helpers";
+import { getColorNames } from "../../utils/helpers";
 
 const Checkbox = ({ title, color, checked, onChange }) => {
   return (

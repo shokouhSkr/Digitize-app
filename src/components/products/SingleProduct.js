@@ -1,10 +1,10 @@
 import React from "react";
 
-import { useFilterContext } from "../store/context/filter_context";
-import { ProductColors } from "../components";
+import { useFilterContext } from "../../store/context/filter_context";
+import { ProductColors } from "..";
 import { Link } from "react-router-dom";
 import { FiHeart } from "react-icons/fi";
-import { formatPrice } from "../utils/helpers";
+import { formatPrice } from "../../utils/helpers";
 
 const SingleProduct = ({ image, company, id, price, title, colors, isLiked }) => {
   const { updateFavorites } = useFilterContext();

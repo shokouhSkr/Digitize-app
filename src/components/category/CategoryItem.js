@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useFilterContext } from "../store/context/filter_context";
-import { getLogoCompany } from "../utils/helpers";
+import { useFilterContext } from "../../store/context/filter_context";
+import { getLogoCompany } from "../../utils/helpers";
 import { Link } from "react-router-dom";
 
 const CategoryItem = ({ logo, title, companies }) => {

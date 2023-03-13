@@ -9,7 +9,9 @@ const App = () => {
     <Router className="max-w-screen-xl font-iranyekan">
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />}>
+          <Route path="/categories/:category" element={<Home />} />
+        </Route>
         <Route path="/products/:id" element={<SingleProduct />} />
         <Route path="/category" element={<Category />} />
         <Route path="/cart" element={<Cart />} />

@@ -1,8 +1,7 @@
-import React from "react";
-
-import { useFilterContext } from "../store/context/filter_context";
-import { Filters } from "../components";
-import { categories } from "../data";
+import { useFilterContext } from "../../store/context/filter_context";
+import { Filters } from "..";
+import { categories } from "../../data";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const { updateCategory } = useFilterContext();
@@ -16,19 +15,21 @@ const Sidebar = () => {
 
           <div className="mb-1 text-xs lg:text-sm">
             {categories.map((category) => {
-              const { id, title, icon } = category;
+              const { id, title, icon, path } = category;
 
               return (
-                <button
+                <NavLink
                   key={id}
-                  type="button"
+                  to={`/categories${path}`}
                   name="category"
                   onClick={() => updateCategory(title)}
-                  className="mb-4 flex items-end text-gray-400 focus:text-slate-800"
+                  className={({ isActive }) => {
+                    return `mb-4 flex items-end ${isActive ? "text-slate-800" : "text-gray-400 "}`;
+                  }}
                 >
                   <img src={icon} alt={title} className="ml-2" />
                   <p>{title}</p>
-                </button>
+                </NavLink>
               );
             })}
           </div>

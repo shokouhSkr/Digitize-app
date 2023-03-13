@@ -243,25 +243,25 @@ const FavIcon = () => {
 export const links = [
   {
     id: 1,
-    url: "/",
+    path: "/",
     title: "خانه",
     icon: <HomeIcon />,
   },
   {
     id: 2,
-    url: "/category",
+    path: "/category",
     title: "دسته‌‌بندی",
     icon: <CateIcon />,
   },
   {
     id: 3,
-    url: "/cart",
+    path: "/cart",
     title: "سبد‌خرید",
     icon: <CartIcon />,
   },
   {
     id: 4,
-    url: "/favorites",
+    path: "/favorites",
     title: "علاقه‌مندی",
     icon: <FavIcon />,
   },
@@ -291,19 +291,19 @@ export const categories = [
     id: 99887722,
     icon: `${phoneCat}`,
     title: "تلفن‌همراه",
-    enTitle: "mobiles",
+    path: "/mobiles",
   },
   {
     id: 99881122,
     icon: `${laptopCat}`,
     title: "لپ‌تاپ",
-    enTitle: "laptops",
+    path: "/laptops",
   },
   {
     id: 77887922,
     icon: `${watchCat}`,
     title: "ساعت‌هوشمند",
-    enTitle: "smartwatchs",
+    path: "/smartwatches",
   },
 ];
 

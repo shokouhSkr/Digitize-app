@@ -1,8 +1,8 @@
 import React from "react";
 
-import { useCartContext } from "../store/context/cart_context";
-import { ShoppingButtons } from "../components";
-import { formatPrice } from "../utils/helpers";
+import { useCartContext } from "../../store/context/cart_context";
+import { ShoppingButtons } from "..";
+import { formatPrice } from "../../utils/helpers";
 
 const Checkout = () => {
   const { totalAmount } = useCartContext();

@@ -1,8 +1,8 @@
 import React from "react";
 
-import { useProductsContext } from "../store/context/products_context";
-import { useFilterContext } from "../store/context/filter_context";
-import { sortPhone, arrow, filterIcon } from "../assets";
+import { useProductsContext } from "../../store/context/products_context";
+import { useFilterContext } from "../../store/context/filter_context";
+import { sortPhone, arrow, filterIcon } from "../../assets";
 
 const FilterButtons = () => {
   const { openFilterModal, openSortModal } = useProductsContext();

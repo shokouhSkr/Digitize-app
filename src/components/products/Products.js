@@ -1,8 +1,6 @@
-import React from "react";
-
-import { Loading, SingleProduct } from "../components";
-import { useProductsContext } from "../store/context/products_context";
-import { useFilterContext } from "../store/context/filter_context";
+import { Loading, SingleProduct } from "..";
+import { useProductsContext } from "../../store/context/products_context";
+import { useFilterContext } from "../../store/context/filter_context";
 
 const Products = () => {
   const { productsError, isProductsLoading } = useProductsContext();

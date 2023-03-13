@@ -1,8 +1,8 @@
 import React from "react";
 
 import { useNavigate } from "react-router-dom";
-import Search from "./Search";
-import { logoMob, backBtn } from "../assets";
+import Search from "../search/Search";
+import { logoMob, backBtn } from "../../assets";
 
 const PageHero = ({ title, back }) => {
   const navigate = useNavigate();

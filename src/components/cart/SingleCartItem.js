@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { FiX } from "react-icons/fi";
-import { useCartContext } from "../store/context/cart_context";
-import { formatPrice } from "../utils/helpers";
+import { useCartContext } from "../../store/context/cart_context";
+import { formatPrice } from "../../utils/helpers";
 
 const SingleCartItem = ({ image, title, price, id, color, amount }) => {
   const { removeItem, toggleAmount } = useCartContext();

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import { Checkbox, PriceRange } from "../components/";
-import { filterCompIcon, filterColorsIcon, filterPriceIcon } from "../data";
-import { useFilterContext } from "../store/context/filter_context.js";
-import { getUniqueValues } from "../utils/helpers";
+import { Checkbox, PriceRange } from "..";
+import { filterCompIcon, filterColorsIcon, filterPriceIcon } from "../../data";
+import { useFilterContext } from "../../store/context/filter_context.js";
+import { getUniqueValues } from "../../utils/helpers";
 import { FiChevronDown } from "react-icons/fi";
 
 const Filters = () => {

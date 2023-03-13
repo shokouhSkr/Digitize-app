@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useFilterContext } from "../store/context/filter_context";
-import { formatPrice } from "../utils/helpers";
+import { useFilterContext } from "../../store/context/filter_context";
+import { formatPrice } from "../../utils/helpers";
 
 const PriceRange = () => {
   const {

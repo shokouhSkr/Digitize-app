@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import { Badge } from "../components";
-import { useCartContext } from "../store/context/cart_context";
+import { Badge } from "..";
+import { useCartContext } from "../../store/context/cart_context";
 import { Link } from "react-router-dom";
-import { links } from "../data";
-import { map, logoDesk, line, phone } from "../assets";
+import { links } from "../../data";
+import { map, logoDesk, line, phone } from "../../assets";
 
 const Footer = (props) => {
   console.log(props);

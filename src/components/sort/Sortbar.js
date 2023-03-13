@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-
-import { useFilterContext } from "../store/context/filter_context";
-import { sortOptions } from "../data";
-import { sortIcon } from "../assets";
+import { useState } from "react";
+import { useFilterContext } from "../../store/context/filter_context";
+import { sortOptions } from "../../data";
+import { sortIcon } from "../../assets";
 
 const Sortbar = () => {
   const { updateSort } = useFilterContext();

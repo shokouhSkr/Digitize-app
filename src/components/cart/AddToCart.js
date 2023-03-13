@@ -1,9 +1,9 @@
 import React from "react";
 
-import { useCartContext } from "../store/context/cart_context";
-import { formatPrice } from "../utils/helpers";
+import { useCartContext } from "../../store/context/cart_context";
+import { formatPrice } from "../../utils/helpers";
 import { Link } from "react-router-dom";
-import { sellerIcon, warrantyIcon, deliveryIcon } from "../data";
+import { sellerIcon, warrantyIcon, deliveryIcon } from "../../data";
 
 const AddToCart = ({ price, id, title, image, color }) => {
   const { addToCart } = useCartContext();

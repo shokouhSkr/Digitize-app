@@ -1,5 +1,5 @@
 import React from "react";
-import { sellerIcon, warrantyIcon, deliveryIcon } from "../data";
+import { sellerIcon, warrantyIcon, deliveryIcon } from "../../data";
 
 const ProductShipping = () => {
   return (

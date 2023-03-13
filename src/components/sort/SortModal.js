@@ -1,7 +1,7 @@
 import React from "react";
 
-import { sortOptions } from "../data";
-import { RadioButton } from "../components";
+import { sortOptions } from "../../data";
+import { RadioButton } from "..";
 
 const SortModal = () => {
   return (

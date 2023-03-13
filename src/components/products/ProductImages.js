@@ -1,5 +1,5 @@
 import React from "react";
-import { preProductImg1, preProductImg2, preProductImg3 } from "../assets";
+import { preProductImg1, preProductImg2, preProductImg3 } from "../../assets";
 
 const ProductImages = ({ image, title }) => {
   return (

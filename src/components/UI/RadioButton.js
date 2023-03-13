@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useFilterContext } from "../store/context/filter_context";
+import { useFilterContext } from "../../store/context/filter_context";
 
 const RadioButton = ({ title }) => {
   const { sort, updateSort } = useFilterContext();

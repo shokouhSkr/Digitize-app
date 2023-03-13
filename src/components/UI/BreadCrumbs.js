@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
-import { leftArrow } from "../assets";
-import { useFilterContext } from "../store/context/filter_context";
+import { leftArrow } from "../../assets";
+import { useFilterContext } from "../../store/context/filter_context";
 
 const BreadCrumbs = ({ category, company, title }) => {
   const { updateCategory, updateCompanies } = useFilterContext();

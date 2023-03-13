@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 
-import { useFilterContext } from "../store/context/filter_context";
-import { useCartContext } from "../store/context/cart_context";
+import { useFilterContext } from "../../store/context/filter_context";
+import { useCartContext } from "../../store/context/cart_context";
 import { Link } from "react-router-dom";
-import { categories } from "../data";
-import { Search, Badge } from "../components";
+import { categories } from "../../data";
+import { Search, Badge } from "..";
 import { CgShoppingBag } from "react-icons/cg";
 import { FiHeart } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
-import { logoDesk } from "../assets";
+import { logoDesk } from "../../assets";
 
 const Header = () => {
   const { updateCategory, clearFilters, favoriteProducts } = useFilterContext();
