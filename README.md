@@ -14,7 +14,7 @@ Digitize is a demo online shop built with ReactJS and Tailwind CSS. With Digitiz
 
 ## Demo
 
-You can try Digitize by visiting [www.digitize-skr.netlify.app](https://www.digitize-skr.netlify.app)
+You can try Digitize by visiting [www.digitize-skr.netlify.app](https://digitize-skr.netlify.app)
 
 ## Contact
 
