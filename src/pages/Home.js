@@ -47,7 +47,7 @@ const Home = () => {
               <button
                 type="button"
                 onClick={clearFilterHandler}
-                className="flex w-full items-center justify-center rounded-md border-2 border-[#fc5d5d] bg-[#ffd1d1] p-2 text-red-400"
+                className="flex w-full items-center justify-center rounded-md border-2 border-[#fc5d5d] bg-[#ffd1d1] p-2 text-base text-red-400"
               >
                 لغو فیلتر
               </button>

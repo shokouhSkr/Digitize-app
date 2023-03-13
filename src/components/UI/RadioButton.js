@@ -19,7 +19,7 @@ const RadioButton = ({ title }) => {
 
       <label
         htmlFor={title}
-        className="mr-2 w-full  cursor-pointer pl-40 text-[13px] text-slate-800"
+        className="mr-2 w-full cursor-pointer pl-[120px] text-sm text-slate-800"
       >
         {title}
       </label>

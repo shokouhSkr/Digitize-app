@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { useFilterContext } from "../../store/context/filter_context";
 import { useCartContext } from "../../store/context/cart_context";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { categories } from "../../data";
 import { Search, Badge } from "..";
 import { CgShoppingBag } from "react-icons/cg";
@@ -20,15 +20,15 @@ const Header = () => {
         <ul className="flex items-center justify-between gap-4 lg:gap-6 lg:text-base xl:gap-7 xl:text-lg">
           <img src={logoDesk} alt="Digitize" className="w-20" />
 
-          <Link to="/" onClick={clearFilters}>
+          <NavLink to="/" onClick={clearFilters}>
             خانه
-          </Link>
+          </NavLink>
           {categories.map((category) => {
-            const { id, title, enTitle } = category;
+            const { id, title, path } = category;
             return (
-              <Link to="/" key={id} onClick={() => updateCategory(title)}>
+              <NavLink to={`/categories${path}`} key={id} onClick={() => updateCategory(title)}>
                 {title}
-              </Link>
+              </NavLink>
             );
           })}
         </ul>

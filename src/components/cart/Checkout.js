@@ -12,17 +12,22 @@ const Checkout = () => {
       <div className="mb-5 w-full rounded-md bg-[#ffffffea] p-5 text-sm md:static md:mt-0 md:bg-white md:p-8">
         {/* mobile */}
         <div className="mb-5 flex flex-1 justify-between">
-          <p className="text-base font-medium md:text-sm">مجموع قیمت:</p>
-          <p className="text-lg text-red-600 md:text-base">{formatPrice(totalAmount)} تومان</p>
+          <p className="text-base font-medium md:text-sm xl:text-base 2xl:text-lg">مجموع قیمت:</p>
+          <p className="text-lg text-red-600 md:text-base xl:text-base 2xl:text-lg">
+            {formatPrice(totalAmount)} تومان
+          </p>
         </div>
-        <button type="button" className="text-sm font-normal text-slate-800 md:hidden">
+        <button
+          type="button"
+          className="text-sm font-normal text-slate-800 md:hidden xl:text-base 2xl:text-lg"
+        >
           کد تخفیف دارید؟
         </button>
 
         {/* laptop */}
         <div className="mb-10 hidden md:block">
           <div className="mb-6 flex items-center justify-between">
-            <p className="text-sm font-normal text-slate-800">کد تخفیف:</p>
+            <p className="text-sm font-normal text-slate-800 xl:text-base 2xl:text-lg">کد تخفیف:</p>
 
             <form className="flex rounded-md">
               <input
@@ -39,12 +44,12 @@ const Checkout = () => {
             </form>
           </div>
 
-          <div className="mb-12 flex justify-between font-medium">
+          <div className="mb-12  flex justify-between font-medium xl:text-base 2xl:text-lg">
             <p>تخفیف:</p>
             <p className="text-slate-800">0 تومان</p>
           </div>
         </div>
-        <div className="hidden justify-between font-medium md:flex">
+        <div className="hidden justify-between font-medium md:flex xl:text-base 2xl:text-lg">
           <p>قیمت نهایی:</p>
           <p className="text-red-600">{formatPrice(totalAmount)} تومان</p>
         </div>

@@ -32,23 +32,16 @@ const SingleProduct = ({ image, company, id, price, title, colors, isLiked }) =>
       <div className="px-2">
         {/* colors */}
         <div className="mb-2 flex justify-between">
-          <span className="text-xs font-light text-gray-300">{company}</span>
+          <span className="text-xs font-light text-gray-300 2xl:text-sm">{company}</span>
           <ProductColors colors={colors} width="w-4" height="h-4" />
         </div>
 
         {/* title */}
         <div className="mb-1 border-b border-gray-100 pb-2">
-          <p
-            className="mb-2 flex items-center justify-start text-[11px] text-slate-800 2xs:text-xs
-                 xs:text-[13px]
-                 2xl:text-sm"
-          >
+          <p className="mb-2 flex items-center justify-start text-[10px] text-slate-800 2xs:text-xs xs:text-[13px] xl:text-sm 2xl:text-[15px]">
             {title}
           </p>
-          <p
-            className="flex items-center justify-end text-[11px] text-red-600 2xs:text-sm xs:text-[13px]
-                 2xl:text-xs"
-          >
+          <p className="flex items-center justify-end text-[11px] text-red-600 2xs:text-[12px] xs:text-sm 2xl:text-[15px]">
             {formatPrice(price)} تومان
           </p>
         </div>
@@ -56,7 +49,7 @@ const SingleProduct = ({ image, company, id, price, title, colors, isLiked }) =>
         {/* order */}
         <Link
           to={`products/${id}`}
-          className="mx-auto flex w-full items-center justify-center py-2 text-center text-xs text-red-400 2xs:text-sm xs:text-[14px]"
+          className="mx-auto flex w-full items-center justify-center py-2 text-center text-[11px] text-red-400 2xs:text-[12px] xs:text-sm xs:text-[14px] 2xl:text-base"
         >
           مشاهده و ثبت سفارش
         </Link>
