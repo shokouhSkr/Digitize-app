@@ -1,45 +1,42 @@
-import React, { useState } from "react";
-
+import React from "react";
 import { Badge } from "..";
 import { useCartContext } from "../../store/context/cart_context";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { links } from "../../data";
 import { map, logoDesk, line, phone } from "../../assets";
 
-const Footer = (props) => {
-  console.log(props);
+const Footer = () => {
   const { totalItems } = useCartContext();
-  const [active, setActive] = useState(links[0]);
-
-  const linkHandler = (id) => {
-    const selectedLink = links.find((link) => link.id === id);
-    setActive(selectedLink);
-  };
+  const location = useLocation();
 
   return (
     <footer className="fixed bottom-0 left-0 right-0 md:static">
       {/* mobile */}
       <section className="flex w-full items-center justify-between rounded-tr-lg rounded-tl-lg bg-[#fdfdfd] px-[10%] py-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:hidden">
         {links.map((link) => {
-          const { id, url, title, icon } = link;
+          const { id, path, title, icon } = link;
 
           return (
             <li key={id} className="list-none">
-              <Link to={url} onClick={() => linkHandler(id)}>
+              <NavLink to={path}>
                 <div className="relative flex items-center">
-                  <span className={`${active.id === id ? "fill-slate-800" : "fill-[#afafaf]"}`}>
+                  <span
+                    className={`${
+                      location.pathname === path ? "fill-slate-800" : "fill-[#afafaf]"
+                    }`}
+                  >
                     {React.cloneElement(icon)}
                   </span>
                   {id === 3 && totalItems > 0 && <Badge />}
                   <p
                     className={`mr-2 text-sm font-bold text-slate-800 ${
-                      active.id === id ? "block" : "hidden"
+                      location.pathname === path ? "block" : "hidden"
                     }`}
                   >
                     {title}
                   </p>
                 </div>
-              </Link>
+              </NavLink>
             </li>
           );
         })}
