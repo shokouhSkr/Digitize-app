@@ -7,7 +7,7 @@ Digitize is a demo online shop built with ReactJS and Tailwind CSS. With Digitiz
 - **Product browsing**: Browse a selection of digital products including mobile phones, laptops, and smartwatches.
 - **Filtering**: Filter products by category, company, colors or price range.
 - **Sorting**: Sort products by price .
-- **Search**: Search for specific products by name or keyword.
+- **Searching**: Search for specific products by name or keyword.
 - **Cart management**: Add and remove products from your cart and view your total cost.
 - **Favorites**: Mark your favorite products for easy reference.
 - **Responsive design**: Digitize is fully responsive, ensuring that you can browse and shop from any device.
