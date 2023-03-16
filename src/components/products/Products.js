@@ -10,8 +10,9 @@ const Products = () => {
 
   if (productsError)
     return (
-      <main className="col-span-full m-auto mt-40 md:col-start-4">
-        <h1 className="text-xl text-slate-800 md:text-2xl">خطا در برقراری ارتباط!</h1>
+      <main className="col-span-full m-auto mt-40 text-center text-slate-800 md:col-start-4">
+        <h1 className="mb-3 text-xl md:text-2xl">خطا در برقراری ارتباط</h1>
+        <h3 className="text-base md:text-lg">(لطفا فیلترشکن خود را روشن کنید)</h3>
       </main>
     );
 
